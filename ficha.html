@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ficha da Sarah</title>
+<meta name="description" content="Ficha da Sarah: perguntas para montar o plano de ação.">
+<meta property="og:title" content="Ficha da Sarah">
+<meta property="og:description" content="Ficha da Sarah: perguntas para montar o plano de ação.">
+<meta name="robots" content="noindex">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: uma coluna estreita de ficha de consultório, seções numeradas na ordem de preenchimento, barra de envio fixa embaixo */
+:root {
+  --bg: #faf6f6;
+  --surface: #ffffff;
+  --ink: #2a1a1f;
+  --muted: #74626a;
+  --line: #ead9dd;
+  --wine: #7a1f35;
+  --wine-soft: #f5e4e8;
+  --gold: #a67c2e;
+  --focus: #b8475f;
+  --font-display: "DM Serif Display", Georgia, "Times New Roman", serif;
+  --font-body: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1a1114; --surface: #24181c; --ink: #f3e9ec; --muted: #b9a3aa; --line: #3d2a30;
+    --wine: #e48aa0; --wine-soft: #3a2027; --gold: #d8b36a; --focus: #f0a3b5; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1a1114; --surface: #24181c; --ink: #f3e9ec; --muted: #b9a3aa; --line: #3d2a30;
+  --wine: #e48aa0; --wine-soft: #3a2027; --gold: #d8b36a; --focus: #f0a3b5; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.55;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 140px;
+}
+.wrap { max-width: 640px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px; }
+header { padding-top: 36px; display: flex; flex-direction: column; gap: 10px; }
+.mark { font-family: var(--font-display); color: var(--gold); font-size: 15px; letter-spacing: .14em; text-transform: uppercase; }
+h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(34px, 8vw, 46px); line-height: 1.05; margin: 0; text-wrap: balance; color: var(--wine); }
+.lead { margin: 0; color: var(--ink); max-width: 60ch; }
+.how { margin: 0; color: var(--muted); font-size: 14px; }
+.how b { color: var(--ink); font-weight: 600; }
+.progress { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.bar { flex: 1; height: 6px; background: var(--line); border-radius: 99px; overflow: hidden; }
+.bar span { display: block; height: 100%; width: 0; background: var(--wine); transition: width .3s ease; }
+section { display: flex; flex-direction: column; gap: 18px; padding-top: 22px; border-top: 1px solid var(--line); }
+.sec-head { display: flex; gap: 14px; align-items: baseline; }
+.sec-num { font-family: var(--font-display); color: var(--gold); font-size: 28px; line-height: 1; min-width: 28px; }
+h2 { font-family: var(--font-display); font-weight: 400; font-size: 26px; line-height: 1.15; margin: 0; text-wrap: balance; }
+.sec-why { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
+.q { display: flex; flex-direction: column; gap: 8px; }
+.q > label, .q > .qlabel { font-weight: 600; font-size: 15px; }
+.star { color: var(--gold); font-weight: 700; margin-right: 4px; }
+.hint { color: var(--muted); font-size: 13px; margin-top: -4px; }
+input[type="text"], input[type="number"], textarea, select {
+  width: 100%; font: inherit; font-size: 16px; color: var(--ink); background: var(--surface);
+  border: 1px solid var(--line); border-radius: 10px; padding: 11px 13px;
+}
+textarea { min-height: 84px; resize: vertical; }
+input:focus-visible, textarea:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible, .chip input:focus-visible + span {
+  outline: 2px solid var(--focus); outline-offset: 2px;
+}
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { position: relative; }
+.chip input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.chip span {
+  display: inline-block; padding: 8px 14px; border: 1px solid var(--line); border-radius: 99px;
+  background: var(--surface); font-size: 14px; cursor: pointer; transition: background .15s, border-color .15s;
+}
+.chip input:checked + span { background: var(--wine-soft); border-color: var(--wine); color: var(--ink); font-weight: 600; }
+.angles { display: flex; flex-direction: column; gap: 10px; }
+.angle { position: relative; display: block; }
+.angle input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.angle .card { display: flex; flex-direction: column; gap: 2px; padding: 13px 15px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); cursor: pointer; }
+.angle .card b { font-weight: 600; }
+.angle .card small { color: var(--muted); font-size: 13px; }
+.angle input:checked + .card { border-color: var(--wine); background: var(--wine-soft); }
+.angle input:focus-visible + .card { outline: 2px solid var(--focus); outline-offset: 2px; }
+.procs { display: flex; flex-direction: column; gap: 10px; }
+.proc { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; padding: 12px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
+.proc .pname { grid-column: 1 / -1; font-weight: 600; font-size: 15px; }
+.proc label { display: flex; flex-direction: column; gap: 4px; font-size: 12px; color: var(--muted); min-width: 0; }
+.proc input, .proc select { padding: 9px 10px; font-size: 15px; }
+.split { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.split label { display: flex; flex-direction: column; gap: 4px; font-size: 13px; color: var(--muted); }
+@media (max-width: 420px) { .proc { grid-template-columns: 1fr 1fr; } .proc label.pd { grid-column: 1 / -1; } }
+.dock {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 5;
+  background: var(--surface); border-top: 1px solid var(--line);
+  padding: 12px max(16px, env(safe-area-inset-right, 0px)) calc(12px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
+}
+.dock-in { max-width: 640px; margin: 0 auto; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.btn { font: inherit; font-weight: 600; font-size: 15px; border-radius: 99px; padding: 12px 20px; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--wine); }
+.btn-main { background: var(--wine); color: var(--surface); flex: 1 1 200px; }
+.btn-alt { background: transparent; color: var(--wine); flex: 0 1 auto; }
+.status { font-size: 13px; color: var(--muted); width: 100%; text-align: center; min-height: 1em; }
+.fallback { width: 100%; min-height: 140px; font-size: 13px; }
+footer { color: var(--muted); font-size: 13px; padding-top: 8px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="mark">Sarah Rodrigues · Estética</div>
+    <h1>Ficha da Sarah</h1>
+    <p class="lead">Já analisamos seu Instagram, seu Google e os concorrentes da região. Agora faltam informações que só você tem, para fechar a Black Friday, os valores de janeiro e o seu plano de conteúdo.</p>
+    <p class="how">Responda o que souber, do seu jeito. Se tiver pouco tempo, comece pelas marcadas com <b>★</b>. O que você escrever fica salvo neste celular; pode parar e voltar depois. No fim, toque em <b>Enviar pelo WhatsApp</b>.</p>
+    <div class="progress" aria-live="polite"><div class="bar"><span id="bar"></span></div><span id="count">0 respondidas</span></div>
+  </header>
+
+  <form id="ficha" autocomplete="off">
+    <div class="wrap">
+
+    <section aria-labelledby="s1">
+      <div class="sec-head"><span class="sec-num">1</span><div><h2 id="s1">Seu atendimento hoje</h2><p class="sec-why">Para saber quanto cabe na sua agenda e de onde partimos.</p></div></div>
+      <div class="q"><label for="atend_mes"><span class="star">★</span>Quantos atendimentos você faz por mês, em média?</label><input type="number" inputmode="numeric" id="atend_mes" data-q="Atendimentos por mês" placeholder="ex.: 35"></div>
+      <div class="q"><span class="qlabel" id="lbl_equipe">Você atende sozinha ou tem equipe?</span>
+        <div class="chips" role="radiogroup" aria-labelledby="lbl_equipe" data-group="equipe" data-q="Equipe">
+          <label class="chip"><input type="radio" name="equipe" id="equipe_1" value="Sozinha"><span>Sozinha</span></label>
+          <label class="chip"><input type="radio" name="equipe" id="equipe_2" value="Tenho secretária ou recepção"><span>Tenho secretária ou recepção</span></label>
+          <label class="chip"><input type="radio" name="equipe" id="equipe_3" value="Tenho outras profissionais"><span>Tenho outras profissionais</span></label>
+        </div></div>
+      <div class="q"><span class="qlabel" id="lbl_agenda">Onde você controla agenda e pacientes hoje?</span>
+        <div class="chips" aria-labelledby="lbl_agenda" data-group="agenda" data-q="Controle de agenda">
+          <label class="chip"><input type="checkbox" name="agenda" id="agenda_1" value="Caderno ou agenda de papel"><span>Caderno ou papel</span></label>
+          <label class="chip"><input type="checkbox" name="agenda" id="agenda_2" value="WhatsApp"><span>WhatsApp</span></label>
+          <label class="chip"><input type="checkbox" name="agenda" id="agenda_3" value="WhatsApp Business com etiquetas"><span>WhatsApp Business com etiquetas</span></label>
+          <label class="chip"><input type="checkbox" name="agenda" id="agenda_4" value="Planilha"><span>Planilha</span></label>
+          <label class="chip"><input type="checkbox" name="agenda" id="agenda_5" value="Aplicativo ou sistema"><span>Aplicativo ou sistema</span></label>
+        </div></div>
+      <div class="q"><label for="lista_pac">Você tem a lista das pacientes antigas (nome e WhatsApp)? Mais ou menos quantas?</label><input type="text" id="lista_pac" data-q="Lista de pacientes antigas" placeholder="ex.: sim, umas 400 no WhatsApp"></div>
+    </section>
+
+    <section aria-labelledby="s2">
+      <div class="sec-head"><span class="sec-num">2</span><div><h2 id="s2">Procedimentos e preços</h2><p class="sec-why">Base da Black Friday e do reajuste de janeiro. O custo é produto e material de cada aplicação.</p></div></div>
+      <div class="q"><span class="qlabel"><span class="star">★</span>Preço que você cobra hoje, custo e procura</span>
+        <p class="hint">Deixe em branco o que você não faz. Valores em reais.</p>
+        <div class="procs" id="procs"></div>
+      </div>
+      <div class="q"><label for="outros_proc">Algum outro procedimento que você faz?</label><input type="text" id="outros_proc" data-q="Outros procedimentos" placeholder="nome, preço e custo"></div>
+      <div class="q"><label for="mais_vende"><span class="star">★</span>Qual procedimento você mais vende? E qual você mais gosta de fazer?</label><textarea id="mais_vende" data-q="Mais vende e mais gosta"></textarea></div>
+      <div class="q"><label for="pagamento">Formas de pagamento e parcelamento que você aceita hoje</label><input type="text" id="pagamento" data-q="Pagamento e parcelamento" placeholder="ex.: Pix, cartão em até 6x sem juros"></div>
+      <div class="q"><label for="avaliacao">A avaliação hoje é paga ou gratuita?</label><input type="text" id="avaliacao" data-q="Avaliação" placeholder="ex.: gratuita"></div>
+      <div class="q"><label for="manutencao">De cada 10 pacientes, quantas voltam para manutenção?</label><input type="number" inputmode="numeric" id="manutencao" data-q="Voltam para manutenção (de 10)" placeholder="ex.: 4"></div>
+    </section>
+
+    <section aria-labelledby="s3">
+      <div class="sec-head"><span class="sec-num">3</span><div><h2 id="s3">Suas pacientes</h2><p class="sec-why">Para falar com a pessoa certa nos vídeos e nos anúncios.</p></div></div>
+      <div class="q"><label for="perfil_pac"><span class="star">★</span>Como é a paciente que mais aparece? Idade, profissão, onde mora</label><textarea id="perfil_pac" data-q="Perfil da paciente" placeholder="ex.: mulheres de 28 a 45, servidoras e autônomas, de Taguatinga, Ceilândia e Águas Claras"></textarea></div>
+      <div class="q"><span class="qlabel"><span class="star">★</span>De onde chegam as pacientes? Dê um palpite em %</span>
+        <div class="split">
+          <label for="orig_ig">Instagram<input type="number" inputmode="numeric" id="orig_ig" data-q="Origem: Instagram (%)"></label>
+          <label for="orig_ind">Indicação<input type="number" inputmode="numeric" id="orig_ind" data-q="Origem: Indicação (%)"></label>
+          <label for="orig_google">Google<input type="number" inputmode="numeric" id="orig_google" data-q="Origem: Google (%)"></label>
+          <label for="orig_ads">Anúncio pago<input type="number" inputmode="numeric" id="orig_ads" data-q="Origem: Anúncio pago (%)"></label>
+        </div></div>
+      <div class="q"><label for="medos">Quais medos ou dúvidas você mais escuta na avaliação?</label><textarea id="medos" data-q="Medos e dúvidas" placeholder="ex.: vai ficar artificial? dói? quanto tempo dura?"></textarea></div>
+      <div class="q"><label for="porque_voce">Por que as pacientes dizem que escolheram você?</label><textarea id="porque_voce" data-q="Por que escolhem você"></textarea></div>
+    </section>
+
+    <section aria-labelledby="s4">
+      <div class="sec-head"><span class="sec-num">4</span><div><h2 id="s4">Como você quer ser lembrada</h2><p class="sec-why">Quase toda clínica da região fala em "harmonização natural, sem mudar quem você é". Você precisa de um jeito só seu.</p></div></div>
+      <div class="q"><span class="qlabel" id="lbl_angulo"><span class="star">★</span>Qual destes tem mais a ver com você?</span>
+        <div class="angles" role="radiogroup" aria-labelledby="lbl_angulo" data-group="angulo" data-q="Ângulo escolhido">
+          <label class="angle"><input type="radio" name="angulo" id="angulo_1" value="A especialista em perfil (nariz, lábios e queixo)"><span class="card"><b>A especialista em perfil</b><small>Nariz, lábios e queixo. Rinomodelação é o seu destaque fixado.</small></span></label>
+          <label class="angle"><input type="radio" name="angulo" id="angulo_2" value="A harmonizadora que a gente conhece (humor, rotina, família)"><span class="card"><b>A harmonizadora que a gente conhece</b><small>Seu humor, sua rotina e sua família na frente. Foi o que mais viralizou no seu perfil.</small></span></label>
+          <label class="angle"><input type="radio" name="angulo" id="angulo_3" value="A experiência de +1.000 pacientes"><span class="card"><b>A experiência de mais de 1.000 pacientes</b><small>O volume de atendimentos como prova de segurança.</small></span></label>
+          <label class="angle"><input type="radio" name="angulo" id="angulo_4" value="Outro (explicado abaixo)"><span class="card"><b>Outro</b><small>Explique no campo abaixo.</small></span></label>
+        </div></div>
+      <div class="q"><label for="angulo_obs">Quer explicar ou juntar dois deles?</label><textarea id="angulo_obs" data-q="Sobre o ângulo"></textarea></div>
+      <div class="q"><label for="formacoes">Quais cursos, certificações e congressos você já fez? Algum fora do Brasil?</label><p class="hint">Os profissionais que mais crescem na região mostram isso como prova de que são referência.</p><textarea id="formacoes" data-q="Cursos e certificações" placeholder="ex.: pós em harmonização, curso de rinomodelação, congresso em São Paulo"></textarea></div>
+      <div class="q"><label for="nao_quer">Tem algo que você não quer mais vender ou mostrar? (ex.: bronze, glúteos)</label><input type="text" id="nao_quer" data-q="Não quer mais vender"></div>
+      <div class="q"><label for="sonho_2027"><span class="star">★</span>Onde você quer estar no fim de 2027?</label><textarea id="sonho_2027" data-q="Objetivo para 2027" placeholder="ex.: faturar R$ X por mês, clínica maior, dar curso"></textarea></div>
+    </section>
+
+    <section aria-labelledby="s5">
+      <div class="sec-head"><span class="sec-num">5</span><div><h2 id="s5">Seu conteúdo</h2><p class="sec-why">A meta é 3 Reels por semana. Precisamos saber o que facilita e o que trava.</p></div></div>
+      <div class="q"><label for="quem_grava">Quem gravou e editou os vídeos de estúdio de setembro e outubro? Teve custo?</label><input type="text" id="quem_grava" data-q="Quem grava e edita"></div>
+      <div class="q"><label for="horas_semana"><span class="star">★</span>Quantas horas por semana você consegue separar para gravar?</label><input type="text" id="horas_semana" data-q="Horas por semana para gravar" placeholder="ex.: terça de manhã, 2 horas"></div>
+      <div class="q"><label for="trava">O que mais te faz parar de postar?</label><textarea id="trava" data-q="O que trava para postar" placeholder="ex.: falta de tempo, vergonha, não sei o que falar"></textarea></div>
+      <div class="q"><span class="qlabel" id="lbl_trend">Você topa trend, humor e vida pessoal nos vídeos?</span>
+        <div class="chips" role="radiogroup" aria-labelledby="lbl_trend" data-group="trend" data-q="Topa trend e humor">
+          <label class="chip"><input type="radio" name="trend" id="trend_1" value="Sim, adoro"><span>Sim, adoro</span></label>
+          <label class="chip"><input type="radio" name="trend" id="trend_2" value="Às vezes"><span>Às vezes</span></label>
+          <label class="chip"><input type="radio" name="trend" id="trend_3" value="Prefiro não"><span>Prefiro não</span></label>
+        </div></div>
+      <div class="q"><label for="familia">Alguém da família ou amiga toparia aparecer fazendo procedimento?</label><input type="text" id="familia" data-q="Família ou amiga em vídeo"></div>
+      <div class="q"><span class="qlabel" id="lbl_aut">As pacientes assinam autorização de uso de imagem?</span>
+        <div class="chips" role="radiogroup" aria-labelledby="lbl_aut" data-group="autorizacao" data-q="Autorização de imagem">
+          <label class="chip"><input type="radio" name="autorizacao" id="aut_1" value="Sim, todas"><span>Sim, todas</span></label>
+          <label class="chip"><input type="radio" name="autorizacao" id="aut_2" value="Só algumas"><span>Só algumas</span></label>
+          <label class="chip"><input type="radio" name="autorizacao" id="aut_3" value="Não"><span>Não</span></label>
+        </div></div>
+    </section>
+
+    <section aria-labelledby="s6">
+      <div class="sec-head"><span class="sec-num">6</span><div><h2 id="s6">Black Friday</h2><p class="sec-why">A ideia é vender o último preço de 2026 só no Grupo VIP, com vagas limitadas. Abre em 27/11.</p></div></div>
+      <div class="q"><label for="bf_proc"><span class="star">★</span>Qual procedimento você mais quer vender na Black Friday?</label><input type="text" id="bf_proc" data-q="Procedimento da Black Friday"></div>
+      <div class="q"><label for="bf_vagas"><span class="star">★</span>Quantas vagas a mais você consegue atender em dezembro?</label><input type="number" inputmode="numeric" id="bf_vagas" data-q="Vagas extras em dezembro"></div>
+      <div class="q"><label for="bf_limite">Qual o máximo de desconto ou de presente que você aceita dar?</label><input type="text" id="bf_limite" data-q="Limite de desconto ou bônus" placeholder="ex.: 10% ou um skinbooster de presente"></div>
+      <div class="q"><label for="vip">Quantas pessoas tem no Grupo VIP e elas conversam lá?</label><input type="text" id="vip" data-q="Grupo VIP"></div>
+    </section>
+
+    <section aria-labelledby="s7">
+      <div class="sec-head"><span class="sec-num">7</span><div><h2 id="s7">Google e anúncios</h2><p class="sec-why">Você não aparece quando alguém busca "harmonização facial Taguatinga". Dá para mudar isso.</p></div></div>
+      <div class="q"><span class="qlabel" id="lbl_gmb">Você consegue entrar no seu perfil da empresa no Google para editar?</span>
+        <div class="chips" role="radiogroup" aria-labelledby="lbl_gmb" data-group="google" data-q="Acesso ao Google">
+          <label class="chip"><input type="radio" name="google" id="gmb_1" value="Sim"><span>Sim</span></label>
+          <label class="chip"><input type="radio" name="google" id="gmb_2" value="Não sei a senha"><span>Não sei a senha</span></label>
+          <label class="chip"><input type="radio" name="google" id="gmb_3" value="Outra pessoa criou"><span>Outra pessoa criou</span></label>
+        </div></div>
+      <div class="q"><label for="ads">Você já impulsionou post ou fez anúncio? Quanto investia e o que aconteceu?</label><textarea id="ads" data-q="Anúncios e impulsionamento"></textarea></div>
+      <div class="q"><label for="obs">Quer contar mais alguma coisa?</label><textarea id="obs" data-q="Observações"></textarea></div>
+    </section>
+
+    <footer>Suas respostas vão só para quem você escolher no WhatsApp. Nada é enviado sozinho.</footer>
+    </div>
+  </form>
+</div>
+
+<div class="dock">
+  <div class="dock-in">
+    <a class="btn btn-main" id="wa" href="https://wa.me/" target="_blank" rel="noopener">Enviar pelo WhatsApp</a>
+    <button type="button" class="btn btn-alt" id="copy">Copiar respostas</button>
+    <div class="status" id="status" role="status"></div>
+    <textarea class="fallback" id="fallback" hidden readonly aria-label="Respostas para copiar"></textarea>
+  </div>
+</div>
+
+<script>
+(function () {
+  var PROCS = ["Toxina botulínica", "Preenchimento labial", "Rinomodelação", "Full face", "Olheiras", "Bioestimulador de colágeno", "Glúteos", "Bronze"];
+  var box = document.getElementById("procs");
+  PROCS.forEach(function (name, i) {
+    var id = "p" + i;
+    var d = document.createElement("div");
+    d.className = "proc";
+    d.innerHTML =
+      '<div class="pname">' + name + '</div>' +
+      '<label for="' + id + '_preco">Preço (R$)<input type="number" inputmode="decimal" id="' + id + '_preco" data-q="' + name + ' · preço (R$)"></label>' +
+      '<label for="' + id + '_custo">Custo (R$)<input type="number" inputmode="decimal" id="' + id + '_custo" data-q="' + name + ' · custo (R$)"></label>' +
+      '<label class="pd" for="' + id + '_procura">Procura<select id="' + id + '_procura" data-q="' + name + ' · procura"><option value=""></option><option>Alta</option><option>Média</option><option>Baixa</option><option>Não faço</option></select></label>';
+    box.appendChild(d);
+  });
+
+  var KEY = "ficha-sarah-v1";
+  var form = document.getElementById("ficha");
+
+  function singles() { return Array.prototype.slice.call(form.querySelectorAll("input[data-q], textarea[data-q], select[data-q]")); }
+  function groups() { return Array.prototype.slice.call(form.querySelectorAll("[data-group]")); }
+
+  function collect() {
+    var data = {};
+    singles().forEach(function (el) { data[el.id] = el.value; });
+    groups().forEach(function (g) {
+      var vals = Array.prototype.slice.call(g.querySelectorAll("input:checked")).map(function (i) { return i.value; });
+      data["g_" + g.getAttribute("data-group")] = vals;
+    });
+    return data;
+  }
+
+  function restore() {
+    var raw = null;
+    try { raw = localStorage.getItem(KEY); } catch (e) {}
+    if (!raw) return;
+    var data;
+    try { data = JSON.parse(raw); } catch (e) { return; }
+    singles().forEach(function (el) { if (data[el.id] != null) el.value = data[el.id]; });
+    groups().forEach(function (g) {
+      var vals = data["g_" + g.getAttribute("data-group")] || [];
+      g.querySelectorAll("input").forEach(function (i) { i.checked = vals.indexOf(i.value) !== -1; });
+    });
+  }
+
+  function buildText() {
+    var lines = ["Ficha da Sarah — respostas", ""];
+    form.querySelectorAll("section").forEach(function (sec) {
+      var title = sec.querySelector("h2").textContent;
+      var block = [];
+      sec.querySelectorAll("[data-q]").forEach(function (el) {
+        var label = el.getAttribute("data-q");
+        var val = "";
+        if (el.hasAttribute("data-group")) {
+          val = Array.prototype.slice.call(el.querySelectorAll("input:checked")).map(function (i) { return i.value; }).join(", ");
+        } else if (!el.closest("[data-group]")) {
+          val = (el.value || "").trim();
+        }
+        if (val) block.push("• " + label + ": " + val);
+      });
+      if (block.length) { lines.push("*" + title + "*"); lines = lines.concat(block); lines.push(""); }
+    });
+    return lines.join("\n").trim();
+  }
+
+  function answered() {
+    var n = 0;
+    singles().forEach(function (el) { if (!el.closest("[data-group]") && !el.closest(".proc") && (el.value || "").trim()) n++; });
+    groups().forEach(function (g) { if (g.querySelector("input:checked")) n++; });
+    document.querySelectorAll(".proc").forEach(function (p) {
+      var filled = Array.prototype.some.call(p.querySelectorAll("input, select"), function (el) { return (el.value || "").trim(); });
+      if (filled) n++;
+    });
+    return n;
+  }
+  var TOTAL = singles().filter(function (el) { return !el.closest("[data-group]") && !el.closest(".proc"); }).length + groups().length + document.querySelectorAll(".proc").length;
+
+  function refresh() {
+    var n = answered();
+    document.getElementById("count").textContent = n + " de " + TOTAL + " respondidas";
+    document.getElementById("bar").style.width = Math.round(n / TOTAL * 100) + "%";
+    document.getElementById("wa").href = "https://wa.me/?text=" + encodeURIComponent(buildText());
+  }
+
+  function save() {
+    try { localStorage.setItem(KEY, JSON.stringify(collect())); } catch (e) {}
+    refresh();
+  }
+
+  form.addEventListener("input", save);
+  form.addEventListener("change", save);
+  form.addEventListener("submit", function (e) { e.preventDefault(); });
+
+  var status = document.getElementById("status");
+  document.getElementById("wa").addEventListener("click", function () {
+    this.href = "https://wa.me/?text=" + encodeURIComponent(buildText());
+    status.textContent = "Escolha no WhatsApp o contato que vai receber as respostas.";
+  });
+  document.getElementById("copy").addEventListener("click", function () {
+    var text = buildText();
+    var fb = document.getElementById("fallback");
+    function showFallback() {
+      fb.hidden = false; fb.value = text; fb.focus(); fb.select();
+      status.textContent = "Texto selecionado abaixo. Toque e segure para copiar.";
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { fb.hidden = true; status.textContent = "Respostas copiadas. Cole na conversa do WhatsApp."; }, showFallback);
+    } else { showFallback(); }
+  });
+
+  restore();
+  refresh();
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,751 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Plano da Sarah</title>
+<meta name="description" content="Plano de ação da Sarah Rodrigues: onde estamos, gargalos, ações e próximos passos.">
+<meta property="og:title" content="Plano da Sarah">
+<meta property="og:description" content="Plano de ação da Sarah Rodrigues: onde estamos, gargalos, ações e próximos passos.">
+<meta name="robots" content="noindex">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: uma coluna de leitura no celular; topo = painel de ação (onde estamos, gargalos, ações, próximos passos, feito); embaixo, análise em seções que abrem e fecham */
+:root {
+  --bg: #faf6f6;
+  --surface: #ffffff;
+  --ink: #2a1a1f;
+  --muted: #74626a;
+  --line: #ead9dd;
+  --wine: #7a1f35;
+  --wine-soft: #f5e4e8;
+  --gold: #a67c2e;
+  --gold-soft: #f6eedd;
+  --bad: #a8323e;
+  --bad-soft: #fbe7e9;
+  --warn: #94600c;
+  --warn-soft: #fbf0d9;
+  --good: #2f7a4f;
+  --good-soft: #e3f3e8;
+  --idle: #6f6468;
+  --idle-soft: #f0ebec;
+  --focus: #b8475f;
+  --font-display: "DM Serif Display", Georgia, "Times New Roman", serif;
+  --font-body: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1a1114; --surface: #24181c; --ink: #f3e9ec; --muted: #b9a3aa; --line: #3d2a30;
+    --wine: #e48aa0; --wine-soft: #3a2027; --gold: #d8b36a; --gold-soft: #3a3020;
+    --bad: #f08a94; --bad-soft: #43202a; --warn: #e5b45c; --warn-soft: #3d311b;
+    --good: #84d0a2; --good-soft: #1f3a2a; --idle: #c2b3b8; --idle-soft: #33262a;
+    --focus: #f0a3b5; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1a1114; --surface: #24181c; --ink: #f3e9ec; --muted: #b9a3aa; --line: #3d2a30;
+  --wine: #e48aa0; --wine-soft: #3a2027; --gold: #d8b36a; --gold-soft: #3a3020;
+  --bad: #f08a94; --bad-soft: #43202a; --warn: #e5b45c; --warn-soft: #3d311b;
+  --good: #84d0a2; --good-soft: #1f3a2a; --idle: #c2b3b8; --idle-soft: #33262a;
+  --focus: #f0a3b5; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.55;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 64px;
+}
+a { color: var(--wine); }
+a:focus-visible, summary:focus-visible, button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.wrap { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 36px; }
+header { padding-top: 36px; display: flex; flex-direction: column; gap: 12px; }
+.mark { font-family: var(--font-display); color: var(--gold); font-size: 15px; letter-spacing: .14em; text-transform: uppercase; }
+h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(36px, 9vw, 52px); line-height: 1.02; margin: 0; color: var(--wine); text-wrap: balance; }
+.lead { margin: 0; max-width: 60ch; }
+.asof { color: var(--muted); font-size: 14px; margin: 0; }
+.strip { display: flex; flex-wrap: wrap; gap: 8px; }
+.count { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; padding: 6px 12px; border-radius: 99px; font-variant-numeric: tabular-nums; }
+.c-bad { background: var(--bad-soft); color: var(--bad); }
+.c-warn { background: var(--warn-soft); color: var(--warn); }
+.c-good { background: var(--good-soft); color: var(--good); }
+.cta-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.countdown { font-size: 15px; }
+.countdown b { color: var(--wine); font-size: 22px; font-family: var(--font-display); font-weight: 400; }
+.btn { display: inline-flex; align-items: center; justify-content: center; font: inherit; font-weight: 600; font-size: 15px; padding: 11px 18px; border-radius: 99px; background: var(--wine); color: var(--surface); text-decoration: none; border: 1px solid var(--wine); cursor: pointer; }
+nav.toc { display: flex; flex-wrap: wrap; gap: 6px; }
+nav.toc a { font-size: 13px; text-decoration: none; color: var(--ink); border: 1px solid var(--line); background: var(--surface); padding: 6px 11px; border-radius: 99px; }
+section { display: flex; flex-direction: column; gap: 16px; scroll-margin-top: 16px; }
+.sec-head { display: flex; gap: 14px; align-items: baseline; border-top: 1px solid var(--line); padding-top: 22px; }
+.sec-num { font-family: var(--font-display); color: var(--gold); font-size: 30px; line-height: 1; min-width: 26px; }
+h2 { font-family: var(--font-display); font-weight: 400; font-size: 28px; line-height: 1.15; margin: 0; text-wrap: balance; }
+.sec-lead { margin: 4px 0 0; color: var(--muted); font-size: 15px; }
+h3 { font-size: 16px; margin: 6px 0 0; }
+p { margin: 0; }
+.pill { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .02em; padding: 3px 10px; border-radius: 99px; white-space: nowrap; }
+.p-bad { background: var(--bad-soft); color: var(--bad); }
+.p-warn { background: var(--warn-soft); color: var(--warn); }
+.p-good { background: var(--good-soft); color: var(--good); }
+.p-idle { background: var(--idle-soft); color: var(--idle); }
+.p-doing { background: var(--gold-soft); color: var(--gold); }
+.rows { display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); overflow: hidden; }
+.row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 12px; padding: 13px 15px; border-top: 1px solid var(--line); align-items: start; }
+.row:first-child { border-top: 0; }
+.row .t { font-weight: 600; }
+.row .d { grid-column: 1 / -1; color: var(--muted); font-size: 14px; }
+ol.gargalos { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; counter-reset: g; }
+ol.gargalos li { counter-increment: g; display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 2px 10px; }
+ol.gargalos li::before { content: counter(g); font-family: var(--font-display); color: var(--wine); font-size: 26px; line-height: 1.1; grid-row: span 2; }
+ol.gargalos b { font-size: 17px; }
+ol.gargalos span { color: var(--ink); font-size: 15px; }
+.group-label { font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); margin-top: 6px; }
+.act { display: grid; grid-template-columns: 54px minmax(0, 1fr) auto; gap: 2px 12px; padding: 13px 15px; border-top: 1px solid var(--line); align-items: start; }
+.act:first-child { border-top: 0; }
+.act .when { font-weight: 700; font-variant-numeric: tabular-nums; color: var(--wine); font-size: 15px; }
+.act .what { font-weight: 600; }
+.act .meta { grid-column: 2 / 3; color: var(--muted); font-size: 13px; }
+.act .pill { grid-row: 1; grid-column: 3; }
+.legend { color: var(--muted); font-size: 13px; }
+ul.check { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+ul.check li { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 10px; align-items: start; }
+ul.check li::before { content: ""; width: 18px; height: 18px; margin-top: 3px; border: 1.5px solid var(--wine); border-radius: 5px; background: var(--surface); }
+ul.check li.done::before { background: var(--good); border-color: var(--good); }
+ul.check small { color: var(--muted); }
+.timeline { list-style: none; margin: 0; padding: 0; position: relative; display: flex; flex-direction: column; gap: 0; }
+.timeline li { display: grid; grid-template-columns: 92px 18px minmax(0, 1fr); gap: 10px; align-items: start; padding-bottom: 14px; position: relative; }
+.timeline .tdate { font-size: 13px; font-weight: 600; color: var(--muted); font-variant-numeric: tabular-nums; text-align: right; padding-top: 1px; }
+.timeline .dot { width: 12px; height: 12px; border-radius: 50%; background: var(--surface); border: 2px solid var(--line); margin: 4px auto 0; position: relative; z-index: 1; }
+.timeline li::after { content: ""; position: absolute; left: calc(92px + 10px + 8px); top: 18px; bottom: -2px; width: 2px; background: var(--line); }
+.timeline li:last-child::after { display: none; }
+.timeline .past .dot { background: var(--line); }
+.timeline .key .dot { background: var(--wine); border-color: var(--wine); }
+.timeline .key .ttext { font-weight: 700; color: var(--wine); }
+.timeline .now .dot { border-color: var(--gold); background: var(--gold); }
+.timeline .ttext small { display: block; color: var(--muted); font-size: 13px; font-weight: 400; }
+.tbl-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { text-align: left; padding: 10px 13px; border-top: 1px solid var(--line); vertical-align: top; }
+thead th { border-top: 0; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 700; background: var(--bg); }
+td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+details { border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+details + details { margin-top: 10px; }
+summary { cursor: pointer; padding: 15px 16px; font-weight: 600; font-size: 17px; list-style: none; display: flex; justify-content: space-between; gap: 12px; align-items: center; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; font-family: var(--font-display); font-size: 24px; color: var(--gold); line-height: 1; }
+details[open] summary::after { content: "–"; }
+summary small { display: block; font-weight: 400; color: var(--muted); font-size: 14px; }
+.det-body { padding: 0 16px 18px; display: flex; flex-direction: column; gap: 14px; }
+.det-body ul, .det-body ol { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
+.chart-box { border: 1px solid var(--line); border-radius: 12px; padding: 12px 10px 6px; background: var(--bg); }
+.chart-title { font-weight: 700; font-size: 15px; margin: 0 4px; }
+.chart-sub { color: var(--muted); font-size: 13px; margin: 2px 4px 6px; }
+svg.reels { width: 100%; height: auto; display: block; }
+svg.reels text { font-family: var(--font-body); }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; }
+.card { border: 1px solid var(--line); border-radius: 12px; padding: 13px 14px; display: flex; flex-direction: column; gap: 6px; background: var(--bg); min-width: 0; }
+.card.me { border-color: var(--wine); background: var(--wine-soft); }
+.card .name { font-weight: 700; }
+.card .meta { font-size: 13px; color: var(--muted); }
+.card .pos { font-size: 14px; font-style: italic; }
+.card .good { font-size: 14px; }
+.tag { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--gold); }
+.note { background: var(--gold-soft); border-radius: 12px; padding: 12px 14px; font-size: 15px; }
+pre.prompt { white-space: pre-wrap; background: var(--bg); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; font-size: 13.5px; line-height: 1.5; margin: 0; font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+.copy { align-self: flex-start; font: inherit; font-size: 13px; font-weight: 600; color: var(--wine); background: transparent; border: 1px solid var(--wine); border-radius: 99px; padding: 6px 12px; cursor: pointer; }
+.three { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+.p3 { border: 1px solid var(--line); border-radius: 12px; padding: 13px 14px; background: var(--bg); display: flex; flex-direction: column; gap: 6px; }
+.p3 .k { font-family: var(--font-display); font-size: 21px; color: var(--wine); }
+.p3 ol { padding-left: 18px; margin: 0; font-size: 14px; display: flex; flex-direction: column; gap: 4px; }
+footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); padding-top: 16px; }
+@media (max-width: 460px) {
+  .act { grid-template-columns: 46px minmax(0, 1fr); }
+  .act .pill { grid-row: auto; grid-column: 2; justify-self: start; }
+  .act .meta { grid-column: 2; }
+  .timeline li { grid-template-columns: 74px 18px minmax(0, 1fr); }
+  .timeline li::after { left: calc(74px + 10px + 8px); }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="mark">Sarah Rodrigues · Estética</div>
+    <h1>Plano de ação</h1>
+    <p class="lead">O que está travando o seu crescimento, como vamos resolver e o que fazer agora. No topo fica o plano; lá embaixo, a análise que sustenta cada decisão.</p>
+    <p class="asof">Atualizado em <span id="asof"></span></p>
+    <div class="strip" id="strip"></div>
+    <div class="cta-row">
+      <span class="countdown" id="countdown"></span>
+      <a class="btn" href="ficha.html" target="_blank" rel="noopener">Responder a ficha</a>
+    </div>
+    <nav class="toc" aria-label="Seções">
+      <a href="#onde">Onde estamos</a><a href="#gargalos">Gargalos</a><a href="#resolver">Como resolver</a><a href="#passos">Próximos passos</a><a href="#feito">Já feito</a><a href="#analise">Análise</a>
+    </nav>
+  </header>
+
+  <section id="onde" aria-labelledby="h-onde">
+    <div class="sec-head"><span class="sec-num">1</span><div><h2 id="h-onde">Onde estamos hoje</h2><p class="sec-lead">Cada frente do negócio, com o sinal de hoje.</p></div></div>
+    <div class="rows" id="onde-list"></div>
+  </section>
+
+  <section id="gargalos" aria-labelledby="h-garg">
+    <div class="sec-head"><span class="sec-num">2</span><div><h2 id="h-garg">Gargalos</h2><p class="sec-lead">Do que mais pesa para o que menos pesa. Os três primeiros travam a chegada de pacientes novas; os dois últimos, o lucro de cada paciente.</p></div></div>
+    <ol class="gargalos" id="garg-list"></ol>
+  </section>
+
+  <section id="resolver" aria-labelledby="h-res">
+    <div class="sec-head"><span class="sec-num">3</span><div><h2 id="h-res">Como vamos resolver</h2><p class="sec-lead">Cada ação com prazo, o gargalo que ela resolve, quem faz e o status.</p></div></div>
+    <p class="legend">Você = Sarah · Nós = equipe da consultoria · Juntos = as duas partes</p>
+    <div id="acoes"></div>
+  </section>
+
+  <section id="passos" aria-labelledby="h-pas">
+    <div class="sec-head"><span class="sec-num">4</span><div><h2 id="h-pas">Próximos passos</h2><p class="sec-lead">Até 20/11 a gente arruma a casa. Em 27/11 abre a Black Friday no Grupo VIP. Dezembro é para agendar no valor atual, e a tabela nova entra em 4/1.</p></div></div>
+    <h3>Esta semana (até 20/11)</h3>
+    <ul class="check" id="semana"></ul>
+    <h3>Até janeiro</h3>
+    <ul class="timeline" id="timeline"></ul>
+  </section>
+
+  <section id="feito" aria-labelledby="h-fei">
+    <div class="sec-head"><span class="sec-num">5</span><div><h2 id="h-fei">O que já foi feito</h2><p class="sec-lead">O mais recente primeiro.</p></div></div>
+    <div class="rows" id="feito-list"></div>
+  </section>
+
+  <section id="analise" aria-labelledby="h-ana">
+    <div class="sec-head"><span class="sec-num">6</span><div><h2 id="h-ana">Análise de apoio</h2><p class="sec-lead">Levantada em 13/11/2026 no seu Instagram, no Google, nos perfis da concorrência e na Biblioteca de Anúncios da Meta. Toque para abrir.</p></div></div>
+
+    <div>
+    <details open>
+      <summary><span>Seu Instagram<small>O jeito pessoal é o que dá alcance</small></span></summary>
+      <div class="det-body">
+        <p>Seus 4 Reels mais vistos são pessoais ou de bastidor. Os Reels de setembro e outubro de 2026, gravados em estúdio e mais institucionais, ficaram entre 761 e 5,7 mil visualizações.</p>
+        <div class="chart-box">
+          <p class="chart-title">O Reel pessoal mais visto teve 160 vezes o alcance de um Reel típico de hoje</p>
+          <p class="chart-sub">Visualizações de cada um dos 55 Reels, escala logarítmica. Em vinho, os pessoais e de bastidor.</p>
+          <svg class="reels" id="reels" viewBox="0 0 480 344" role="img" aria-label="O Reel pessoal mais visto teve 160 vezes o alcance de um Reel típico de hoje"></svg>
+        </div>
+        <ol>
+          <li><b>241 mil:</b> você entrando na clínica (26/07/2025)</li>
+          <li><b>155 mil:</b> POV da cliente fiel no fim do dia (29/08/2025)</li>
+          <li><b>108 mil:</b> selfie em trend (03/07/2025)</li>
+          <li><b>62,5 mil:</b> risadas no atendimento (19/07/2025)</li>
+        </ol>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Item</th><th>Hoje</th></tr></thead>
+          <tbody>
+            <tr><td>Seguidores</td><td>2.522 (segue 652)</td></tr>
+            <tr><td>Publicações</td><td>127, sendo 55 Reels, desde maio de 2023</td></tr>
+            <tr><td>Último post</td><td>22/10/2026</td></tr>
+            <tr><td>Buraco sem postar</td><td>março a agosto de 2026</td></tr>
+            <tr><td>Comentários</td><td>1 a 2 por post nos últimos posts</td></tr>
+            <tr><td>Links da bio</td><td>WhatsApp de agendamento e Grupo VIP</td></tr>
+          </tbody>
+        </table></div>
+        <h3>O que já funciona</h3>
+        <ul>
+          <li>Resultados bem fotografados, com marca d'água e luz boa.</li>
+          <li>Prova de volume pronta para usar: você já atendeu mais de mil pacientes.</li>
+          <li>O Grupo VIP no WhatsApp já existe: é a semente da comunidade.</li>
+        </ul>
+        <h3>O que muda</h3>
+        <ul>
+          <li><b>Nome do perfil:</b> Sarah Rodrigues | Harmonização Facial Taguatinga (o nome entra na busca do Instagram).</li>
+          <li><b>Bio:</b> Harmonização natural: mais bonita, ainda você / +1.000 pacientes · CRF 590427 / JK Shopping, Taguatinga · sala 211 / Agende sua avaliação 👇</li>
+          <li><b>Destaques, nesta ordem:</b> Comece aqui · Resultados · Depoimentos · Como funciona a avaliação · Como chegar no JK · Grupo VIP. Glúteos e Bronze viram um destaque só, "Corpo".</li>
+          <li><b>Um nome só para a marca</b> no Instagram, no Google e na placa. Hoje aparecem "Dra. Sarah Rodrigues", "Sarah Rodrigues Estética" e "Sarah Rodrigues Estética Avançada".</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary><span>Concorrência<small>Quatro profissionais de harmonização no mesmo complexo do JK</small></span></summary>
+      <div class="det-body">
+        <p>A frase "harmonização que não muda quem você é" é a de quase todo mundo na região. E quem mais cresce dá um nome ao próprio trabalho.</p>
+        <div class="cards" id="conc"></div>
+        <h3>O que isso ensina</h3>
+        <ol>
+          <li><b>Brigar por preço não dá.</b> Tem anúncio a partir de R$ 650 e 4 ml por R$ 1.500. A briga é por confiança e experiência.</li>
+          <li><b>Quem cresce dá nome ao próprio trabalho:</b> Brazilian Face™, Perfil Perfeito, Protocolo New Skin, Full Face com naturalidade.</li>
+          <li><b>O formato que cresce é o seu de 2025:</b> trend de humor e POV, como faz a Gabi Laudeauser.</li>
+          <li><b>Vida pessoal gera conversa:</b> gravidez, aniversário, família e fé tiveram mais comentários que post técnico.</li>
+          <li><b>Autoridade vem de fora da cadeira:</b> congresso, certificação e curso para outros profissionais.</li>
+          <li><b>Os vizinhos de prédio anunciam:</b> a Anna Sarah fala com Ceilândia e Samambaia, o público natural do JK.</li>
+        </ol>
+        <h3>Ângulos possíveis para você</h3>
+        <ul>
+          <li><b>A especialista em perfil:</b> nariz, lábios e queixo. Atenção: "Perfil Perfeito" já é a marca da Duda Rocha, então o nome teria que ser outro.</li>
+          <li><b>A harmonizadora que a gente conhece:</b> humor, rotina e família na frente. Foi o que mais viralizou no seu perfil.</li>
+          <li><b>A experiência de mais de 1.000 pacientes:</b> o volume como prova de segurança.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary><span>Preços da região<small>O que a sua paciente já vê anunciado</small></span></summary>
+      <div class="det-body">
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Quem</th><th>Oferta</th><th>Preço</th></tr></thead>
+          <tbody>
+            <tr><td>Royal Face</td><td>Toxina botulínica, 2 aplicações pelo preço de 1</td><td class="num">R$ 1.399</td></tr>
+            <tr><td>Royal Face</td><td>Toxina + preenchimento</td><td class="num">R$ 1.419</td></tr>
+            <tr><td>Royal Face</td><td>Preenchimento 3 ml, pague 2</td><td class="num">R$ 2.099</td></tr>
+            <tr><td>Royal Face</td><td>Bioestimulador Radiesse 1,5 ml no rosto</td><td class="num">R$ 1.699</td></tr>
+            <tr><td>Clínica Dr. Giovani Almeida</td><td>4 ml de ácido hialurônico</td><td class="num">a partir de R$ 1.500</td></tr>
+            <tr><td>Dra. Nathália Sousa</td><td>Harmonização, preenchimento, botox + avaliação grátis</td><td class="num">a partir de R$ 650</td></tr>
+            <tr><td>Oligoflora Brasília</td><td>Black Friday de harmonização</td><td class="num">a partir de R$ 810 (6x)</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </details>
+
+    <details>
+      <summary><span>Google<small>Quem busca seu nome acha; quem busca "harmonização facial Taguatinga" não</small></span></summary>
+      <div class="det-body">
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Item</th><th>Hoje</th><th>O que fazer</th></tr></thead>
+          <tbody>
+            <tr><td>Categoria</td><td>Esteticista</td><td>Trocar pela mais próxima de harmonização e somar categorias secundárias</td></tr>
+            <tr><td>Avaliações</td><td>4,8 com 24</td><td>Meta de 60 até março: pedir no WhatsApp no dia seguinte ao atendimento e responder todas</td></tr>
+            <tr><td>Serviços</td><td>Não cadastrados</td><td>Harmonização, preenchimento labial, rinomodelação, toxina, bioestimulador</td></tr>
+            <tr><td>Site</td><td>Não tem</td><td>Uma página simples com serviços, mapa e WhatsApp, numa segunda fase</td></tr>
+            <tr><td>Posts</td><td>Só fotos da sala</td><td>Postar no Google o mesmo Reel da semana</td></tr>
+            <tr><td>Telefone</td><td>Certo na ficha</td><td>O site do JK lista a sala 211 como "telefone indisponível": pedir para atualizar</td></tr>
+          </tbody>
+        </table></div>
+        <p class="note">Na busca pelo seu nome aparece logo abaixo a "Dra Anna Sarah", do mesmo complexo. Use sempre o sobrenome: Sarah Rodrigues.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span>Seu público<small>O que dá para ver de fora e o que falta saber</small></span></summary>
+      <div class="det-body">
+        <ul>
+          <li><b>Região:</b> o JK fica em Taguatinga Norte, na divisa com Ceilândia; Samambaia também está perto.</li>
+          <li><b>Quem aparece nos posts:</b> mulheres em quase todos, alguns homens e a sua mãe.</li>
+          <li><b>Procedimentos mostrados:</b> lábios, rinomodelação, full face, olheiras, toxina, glúteos e bronze.</li>
+        </ul>
+        <p>O resto vem das suas respostas na ficha e, daqui para frente, do CRM: idade e profissão das pacientes, de onde elas chegam, o procedimento que mais vende e quantas voltam.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span>Método dos 3 P's<small>3 Reels por semana, um de cada P</small></span></summary>
+      <div class="det-body">
+        <p>Meta: 3 Reels por semana, mais 1 carrossel de resultado e stories em todo dia de atendimento. Todo vídeo termina com um pedido de ação: "agende sua avaliação no link" ou "comenta EU QUERO".</p>
+        <div class="three">
+          <div class="p3"><span class="k">Provo que faço</span><span class="legend">Segunda · mostrar que você sabe o que faz</span><ol><li>Procedimento ao vivo, com você narrando</li><li>"Não faço em você se..."</li><li>Mito ou verdade em 15 segundos</li><li>A marcação com lápis antes da agulha</li><li>A caixa e o lote do produto</li></ol></div>
+          <div class="p3"><span class="k">Provo que resolvo</span><span class="legend">Sexta · outras pessoas dizendo que funciona</span><ol><li>Depoimento de 20 segundos no espelho</li><li>Antes e depois com a queixa escrita na tela</li><li>Mensagem de paciente, com autorização</li><li>Paciente que voltou um ano depois</li><li>Mosaico de mais de mil pacientes</li></ol></div>
+          <div class="p3"><span class="k">Provo quem sou</span><span class="legend">Quarta · criar vínculo com você</span><ol><li>Trend ou POV de humor da rotina</li><li>Família ou amiga fazendo procedimento</li><li>"Eu fiz em mim primeiro"</li><li>Por que você virou farmacêutica esteta</li><li>Um dia fora da clínica</li></ol></div>
+        </div>
+        <h3>Rotina</h3>
+        <ul>
+          <li>Um turno de gravação por semana para os 3 Reels da semana seguinte.</li>
+          <li>Stories no dia a dia: bastidor, enquete, caixinha "Sarah responde", horário vago.</li>
+          <li>Autorização de imagem assinada na ficha de toda paciente.</li>
+        </ul>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Meta até 31/01/2027</th><th>Hoje</th><th>Meta</th></tr></thead>
+          <tbody>
+            <tr><td>Reels por mês</td><td class="num">0 em novembro</td><td class="num">12</td></tr>
+            <tr><td>Seguidores</td><td class="num">2.522</td><td class="num">3.500</td></tr>
+            <tr><td>Avaliações no Google</td><td class="num">24</td><td class="num">45</td></tr>
+            <tr><td>Conversas novas vindas do Instagram</td><td>não medido</td><td>medir toda semana</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </details>
+
+    <details>
+      <summary><span>Black Friday<small>O último preço de 2026, só no Grupo VIP</small></span></summary>
+      <div class="det-body">
+        <p>Recomendação: vender o valor atual pela última vez antes do reajuste de janeiro, só para quem está no Grupo VIP, com vagas limitadas e presente no lugar de desconto grande. A urgência é verdadeira e não ensina a paciente a esperar promoção.</p>
+        <ol>
+          <li><b>14 a 20/11, aquecer:</b> stories e um Reel avisando que a Black Friday é só no Grupo VIP.</li>
+          <li><b>21 a 26/11, grupo:</b> dúvidas, antes e depois e quantas vagas vão existir.</li>
+          <li><b>27/11, 9h, abre:</b> condições, número de vagas e parcelamento. A concorrência parcela em 6x a 12x.</li>
+          <li><b>27 a 30/11, vende:</b> cada interessada entra no CRM com a etiqueta "Black Friday".</li>
+          <li><b>1/12, fecha e avisa:</b> valores novos a partir de janeiro; até 31/12 ainda dá para agendar no valor atual.</li>
+        </ol>
+        <p class="note">Antes de colocar preço em anúncio, confira as regras de publicidade do CRF.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span>Equipamentos<small>De R$ 716 a R$ 1.457 para gravar sozinha</small></span></summary>
+      <div class="det-body">
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Item</th><th>Recomendação</th><th>Faixa (Mercado Livre, 13/11)</th></tr></thead>
+          <tbody>
+            <tr><td>Microfone</td><td>Lapela sem fio com 2 transmissores (ex.: DJI Mic Mini 2): um em você, outro na paciente</td><td class="num">R$ 509 a R$ 937</td></tr>
+            <tr><td>Luz</td><td>Kit com 2 softbox 50x70 e tripés de 2 m</td><td class="num">R$ 158 a R$ 449</td></tr>
+            <tr><td>Tripé</td><td>Tripé de celular de 2 m com controle bluetooth</td><td class="num">R$ 49 a R$ 71</td></tr>
+          </tbody>
+        </table></div>
+        <p>O microfone é o primeiro a comprar. Enquanto o softbox não chega, a luz natural da sala ajuda.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span>CRM e comunidade<small>Nenhuma paciente some depois do procedimento</small></span></summary>
+      <div class="det-body">
+        <p><b>Etiquetas do WhatsApp Business:</b> Novo contato → Avaliação marcada → Fechou → Pós-procedimento → Manutenção próxima (e "Black Friday" só nesta campanha).</p>
+        <p><b>Planilha de pacientes:</b> nome, WhatsApp, aniversário, como conheceu, procedimento, data, valor, produto e lote, próxima manutenção, autorizou imagem, avaliou no Google, indicou alguém.</p>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Quando</th><th>Mensagem</th></tr></thead>
+          <tbody>
+            <tr><td>Dia seguinte</td><td>Como você está? E o link para avaliar no Google</td></tr>
+            <tr><td>7 dias depois</td><td>Foto do resultado e pedido de depoimento em vídeo</td></tr>
+            <tr><td>No prazo de manutenção</td><td>Lembrete com horário sugerido</td></tr>
+            <tr><td>Aniversário</td><td>Parabéns e um mimo para usar no mês</td></tr>
+          </tbody>
+        </table></div>
+        <h3>Comunidade</h3>
+        <ul>
+          <li>No Grupo VIP, toda semana: uma dica, um bastidor e as vagas em primeira mão.</li>
+          <li>Uma vez por mês: "Sarah responde" ao vivo.</li>
+          <li>Indicação: quem indica e a amiga fecha ganha um bônus no próximo procedimento.</li>
+          <li>A cada 3 meses: café de autocuidado no JK com pacientes do grupo.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary><span>Valores de janeiro<small>Subir o preço junto com uma experiência que a paciente vê</small></span></summary>
+      <div class="det-body">
+        <ul>
+          <li><b>Avaliação com cara de consulta:</b> fotos padronizadas e planejamento por escrito. Opção: cobrar a avaliação e abater do procedimento.</li>
+          <li><b>Pós-procedimento acompanhado:</b> mensagens do dia seguinte e de 7 dias, com retorno incluído.</li>
+          <li><b>Um mimo de saída:</b> cartão de cuidados e algo pequeno com a sua marca.</li>
+          <li><b>Prova na mesa:</b> álbum de antes e depois e as avaliações do Google na recepção.</li>
+        </ul>
+        <ol>
+          <li><b>Até 20/11:</b> você preenche a tabela atual e o custo de cada procedimento na ficha.</li>
+          <li><b>Até 30/11:</b> definimos a tabela nova. Sobe primeiro o que tem mais procura.</li>
+          <li><b>1/12:</b> aviso no Grupo VIP e nos stories.</li>
+          <li><b>4/1:</b> tabela nova em vigor, com parcelamento.</li>
+        </ol>
+      </div>
+    </details>
+
+    <details>
+      <summary><span>IA na sua rotina<small>Três pedidos prontos para copiar</small></span></summary>
+      <div class="det-body">
+        <p>Use no ChatGPT ou no Claude. Troque o que estiver entre colchetes.</p>
+        <pre class="prompt" id="pr1">Sou a Sarah Rodrigues, farmacêutica esteta em Taguatinga (JK Shopping).
+Faço harmonização facial, preenchimento labial e rinomodelação.
+Meu jeito: próxima, bem-humorada, explico tudo antes de fazer.
+Crie 3 roteiros de Reels de até 30 segundos para esta semana:
+1) Provo que faço: mostra que eu sei o que estou fazendo
+2) Provo que resolvo: resultado ou depoimento de paciente
+3) Provo quem sou: humor ou rotina, sem falar de procedimento
+Para cada um: frase de abertura, o que eu falo, o que aparece na tela e a chamada final.</pre>
+        <button class="copy" type="button" data-copy="pr1">Copiar</button>
+        <pre class="prompt" id="pr2">Você é a recepcionista da minha clínica de harmonização.
+Escreva 3 respostas curtas e acolhedoras de WhatsApp para:
+1) "Quanto custa o preenchimento labial?"
+2) "Dói?"
+3) Paciente que fez o procedimento ontem
+Sempre convide para a avaliação e não prometa resultado.</pre>
+        <button class="copy" type="button" data-copy="pr2">Copiar</button>
+        <pre class="prompt" id="pr3">Responda esta avaliação do Google em até 3 linhas,
+citando o procedimento e o nome da paciente, sem exagero:
+[cole a avaliação aqui]</pre>
+        <button class="copy" type="button" data-copy="pr3">Copiar</button>
+      </div>
+    </details>
+
+    <details>
+      <summary><span>Fontes<small>Tudo consultado em 13/11/2026</small></span></summary>
+      <div class="det-body">
+        <ul>
+          <li>Instagram: <a href="https://www.instagram.com/sarah.estetiica/" target="_blank" rel="noopener">@sarah.estetiica</a> e os perfis listados em Concorrência.</li>
+          <li>Google: busca pelo seu nome e <a href="https://www.google.com/maps/search/harmoniza%C3%A7%C3%A3o+facial+taguatinga" target="_blank" rel="noopener">Google Maps para "harmonização facial taguatinga"</a>.</li>
+          <li><a href="https://www.facebook.com/ads/library/" target="_blank" rel="noopener">Biblioteca de Anúncios da Meta</a>: anúncios ativos de harmonização em Taguatinga e Brasília.</li>
+          <li>Preços: <a href="https://loja.royalface.com.br/" target="_blank" rel="noopener">loja da Royal Face</a> e <a href="https://lista.mercadolivre.com.br/dji-mic-mini" target="_blank" rel="noopener">Mercado Livre</a>.</li>
+          <li><a href="https://jkshoppingdf.com.br/escritorios/" target="_blank" rel="noopener">Diretório de salas do JK Shopping</a>.</li>
+        </ul>
+      </div>
+    </details>
+    </div>
+  </section>
+
+  <footer>Plano feito para a Sarah Rodrigues e atualizado a cada passo. Para responder o que falta, use a <a href="ficha.html" target="_blank" rel="noopener">Ficha da Sarah</a>.</footer>
+</div>
+
+<script>
+(function () {
+  /* ===== Dados do plano: atualizar aqui a cada avanço ===== */
+  var ATUALIZADO = "2026-11-13";
+  var BLACK_FRIDAY = "2026-11-27";
+
+  var ONDE = [
+    ["Instagram", "2.522 seguidores, 3 semanas sem postar, Reels recentes com mediana de 1,5 mil visualizações", "bad"],
+    ["Posicionamento", "A mesma frase de todo mundo (\"sem mudar quem você é\") e nenhum nome próprio para o seu trabalho", "bad"],
+    ["Black Friday", "Oferta ainda não definida", "bad"],
+    ["CRM e retorno de pacientes", "Não existe: ninguém é lembrado da manutenção nem convidado a avaliar no Google", "bad"],
+    ["Google", "Nota 4,8 com 24 avaliações, mas fora do mapa na busca \"harmonização facial Taguatinga\"", "warn"],
+    ["Concorrência no JK Shopping", "4 profissionais de harmonização no mesmo complexo: você, Anna Sarah, SV Clinic e André Allisson", "warn"],
+    ["Números do negócio", "Preço, custo, origem das pacientes e vagas ainda não levantados", "warn"],
+    ["Comunidade", "O Grupo VIP no WhatsApp existe, mas sem rotina", "warn"],
+    ["Produção de conteúdo", "Sem microfone, luz e tripé próprios", "warn"],
+    ["Prova de resultado", "Resultados bem fotografados, mais de 1.000 pacientes, 4,8 no Google", "good"]
+  ];
+
+  var GARGALOS = [
+    ["Você aparece pouco.", "Foram 6 meses sem postar em 2026, são 3 semanas sem post agora, e você não está no mapa do Google na busca principal. Quem não aparece não é lembrada."],
+    ["Você parece igual às outras.", "A mesma frase de pelo menos 6 concorrentes e nenhum nome para o seu trabalho. Os maiores da região têm: Brazilian Face™ (Maurício Alves), Perfil Perfeito e Protocolo New Skin (Duda Rocha), Full Face com naturalidade (André Allisson)."],
+    ["O alcance não vira paciente.", "Um Reel seu teve 241 mil visualizações e o perfil continua com 2,5 mil seguidores: a bio é genérica e o vídeo não terminava com um pedido de ação."],
+    ["A paciente vai embora e não volta.", "Não há CRM, lembrete de manutenção, pedido de avaliação no Google nem pedido de indicação."],
+    ["Faltam os números.", "Sem preço, custo e origem das pacientes não dá para fechar a Black Friday nem subir o preço com segurança."]
+  ];
+
+  /* status: nao | andamento | feito */
+  var ACOES = [
+    ["2026-11-13", "Aula de IA com os 3 pedidos prontos", 1, "Nós", "nao"],
+    ["2026-11-20", "Responder a Ficha da Sarah", 5, "Você", "nao"],
+    ["2026-11-20", "Nova bio, nome do perfil e destaques na ordem de venda", 3, "Você, com o nosso texto", "nao"],
+    ["2026-11-20", "Google: trocar a categoria, cadastrar os serviços e pedir avaliação às pacientes recentes", 1, "Juntos", "nao"],
+    ["2026-11-20", "Etiquetas no WhatsApp Business e planilha de pacientes", 4, "Nós", "nao"],
+    ["2026-11-20", "Comprar microfone, softbox e tripé", 1, "Você", "nao"],
+    ["2026-11-21", "Fechar a oferta da Black Friday", 5, "Nós", "nao"],
+    ["2026-11-21", "Rotina do Grupo VIP: dica semanal e vagas em primeira mão", 4, "Você", "nao"],
+    ["2026-11-24", "Começar os 3 Reels por semana, um de cada P", 1, "Você", "nao"],
+    ["2026-11-24", "Pedido de ação no fim de todo vídeo", 3, "Você", "nao"],
+    ["2026-11-25", "Escolher o seu ângulo e dar nome ao seu jeito de trabalhar", 2, "Juntos", "nao"],
+    ["2026-11-27", "Mensagens automáticas: dia seguinte, 7 dias, manutenção e aniversário", 4, "Você", "nao"],
+    ["2026-11-30", "Definir a tabela de valores de janeiro", 5, "Juntos", "nao"]
+  ];
+
+  var SEMANA = [
+    ["Aula de IA com os 3 pedidos prontos", "nós", false],
+    ["Compartilhar a ficha e combinar a resposta até 20/11", "nós", false],
+    ["Trocar nome e bio do Instagram e reorganizar os destaques", "você, com o nosso texto", false],
+    ["Google: trocar a categoria, cadastrar os serviços e pedir avaliação às pacientes das últimas 2 semanas", "juntos", false],
+    ["Pedir à administração do JK para atualizar o telefone da sala 211 no site", "você", false],
+    ["Criar as etiquetas no WhatsApp Business e a planilha de pacientes", "nós", false],
+    ["Comprar microfone, softbox e tripé", "você", false],
+    ["Avisar nos stories que a Black Friday será só no Grupo VIP", "você", false],
+    ["Gravar os 3 primeiros Reels, um de cada P, para publicar a partir de 24/11", "você", false]
+  ];
+
+  /* [início, fim, texto, detalhe, destaque] */
+  var LINHA = [
+    ["2026-11-13", "2026-11-13", "Aula de IA", "", false],
+    ["2026-11-13", "2026-11-20", "Arrumar a casa", "Ficha respondida, bio e destaques, Google, CRM e equipamentos", false],
+    ["2026-11-14", "2026-11-26", "Aquecimento da Black Friday", "Stories, um Reel e conteúdo no Grupo VIP", false],
+    ["2026-11-24", "2027-01-31", "3 Reels por semana", "Um de cada P, toda semana", false],
+    ["2026-11-27", "2026-11-30", "Black Friday no Grupo VIP", "O último preço de 2026, com vagas limitadas", true],
+    ["2026-11-30", "2026-11-30", "Tabela nova definida", "", false],
+    ["2026-12-01", "2026-12-31", "Agenda no valor atual", "Aviso dos valores novos e última chance no valor de hoje", false],
+    ["2027-01-04", "2027-01-04", "Valores novos em vigor", "", true],
+    ["2027-01-31", "2027-01-31", "Revisão das metas", "Seguidores, Reels, avaliações e conversas", false]
+  ];
+
+  var FEITO = [
+    ["2026-11-13", "Plano de ação publicado como página aberta", "Este link"],
+    ["2026-11-13", "Pergunta sobre cursos e certificações incluída na ficha", "Base para mostrar autoridade"],
+    ["2026-11-13", "Mapeados os 3 concorrentes que você indicou", "Os três têm marca com nome próprio; André Allisson também atende no JK"],
+    ["2026-11-13", "Ficha da Sarah publicada", "Aguardando as respostas até 20/11"],
+    ["2026-11-13", "Diagnóstico de Instagram, Google, concorrência e preços", "Análise de apoio, abaixo"],
+    ["2026-11-13", "Reunião: pauta e método dos 3 P's definidos", "Base deste plano"]
+  ];
+
+  /* [nome, url, onde, seguidores, google, posicionamento, o que faz bem, indicado, é ela] */
+  var CONC = [
+    ["Sarah Rodrigues (você)", "https://www.instagram.com/sarah.estetiica/", "JK Shopping, sala 211", "2,5 mil", "4,8 (24)", "\"Te trago a beleza dos seus sonhos\"", "Resultado bonito e mais de 1.000 pacientes, mas sem frequência", false, true],
+    ["Dr. André Allisson", "https://www.instagram.com/drandreallisson/", "JK Shopping", "34,7 mil", "1,0 (2)", "\"Full Face com naturalidade\", \"lábio Premium\"", "Full face com 117 mil a 252 mil visualizações; congressos fora do país e família nos destaques", true, false],
+    ["Dra. Duda Rocha", "https://www.instagram.com/dra.dudarocha/", "Brasília", "13,8 mil", "não confirmado", "\"Perfil Perfeito\" e \"Protocolo New Skin\"", "Resultado misturado com vida pessoal; cerca de 10 Reels por mês; mentoria", true, false],
+    ["Dr. Maurício Alves", "https://www.instagram.com/dr.mauricioalves/", "Asa Sul", "356 mil", "5,0 (58)", "\"Brazilian Face™\"", "Posta todo dia; anúncio pedindo \"EU QUERO\" nos comentários; cursos para profissionais", true, false],
+    ["Anna Sarah Estética", "https://www.instagram.com/annasarah.estetica/", "JK Shopping, sala 302", "4,5 mil", "5,0 (43)", "Farmacêutica e professora, \"referência em qualidade de pele\"", "Anúncio pago falando com Ceilândia e Samambaia", false, false],
+    ["Dra. Silmara Varela / SV Clinic", "https://www.instagram.com/drasilmaravarela/", "JK Shopping", "14,9 mil", "4,9 (112)", "\"NÃO vou te deixar igual a todo mundo\"", "112 avaliações no Google, no mesmo endereço que você", false, false],
+    ["Dra. Andressa Gomes", "https://www.instagram.com/dra_andressagomes/", "Taguatinga Centro", "287 mil", "5,0 (57)", "\"Sem mudar quem você é\"", "Vida pessoal: o anúncio da gravidez teve 78,8 mil visualizações", false, false],
+    ["Gabi Laudeauser", "https://www.instagram.com/dra.gabrielalaudeauser/", "Valparaíso e Taguatinga", "18,9 mil", "não conferido", "Farmacêutica, \"harmonização sem exagero\"", "Trend de humor: 319 mil visualizações e 9,8 mil curtidas num Reel", false, false],
+    ["Instituto Harmonizar", "https://www.instagram.com/institutoharmonizar.bsb/", "Asa Sul e Taguatinga", "15,1 mil", "4,7 (71)", "\"Condições especiais todo mês\"", "Promoção mensal, mas pouco alcance nos Reels", false, false],
+    ["Royal Face Taguatinga", "https://www.instagram.com/royalface.taguatinga/", "Taguatinga Sul", "14,6 mil", "4,6 (179)", "Rede de franquia, preço fechado", "Vende procedimento online com preço público", false, false],
+    ["Dra. Katyara Araújo", "https://www.instagram.com/drakatyaraaraujo/", "Taguatinga Norte", "2,7 mil", "5,0 (25)", "\"Referência em rejuvenescimento facial\"", "Posta toda semana; post de aniversário com 53 comentários", false, false]
+  ];
+
+  /* Reels da Sarah: [data, visualizações, rótulo] (rótulo vazio = pessoal sem rótulo; null = outro) */
+  var REELS = [["2023-06-28",515],["2023-07-23",1473],["2023-07-27",2154],["2023-08-01",1851],["2023-08-07",1456],["2023-08-18",1580],["2023-08-31",658],["2023-09-22",929],["2023-10-02",1900],["2023-10-05",3750],["2023-10-18",1978],["2023-10-18",2157],["2023-10-18",2048],["2023-10-24",2055],["2023-11-08",1370],["2023-11-11",1222],["2023-11-29",1065],["2024-03-21",2027],["2024-06-17",2594],["2024-06-20",1925],["2024-06-24",6895],["2024-06-24",2572],["2024-06-26",2259],["2024-09-26",3238],["2025-03-17",44300],["2025-05-14",2068],["2025-05-17",1794],["2025-05-21",1544],["2025-06-20",1107],["2025-06-25",758],["2025-06-28",974],["2025-07-01",5685],["2025-07-03",108000,"108 mil"],["2025-07-08",7147],["2025-07-19",62500,"62,5 mil"],["2025-07-26",241000,"241 mil"],["2025-08-02",4652],["2025-08-13",20800,""],["2025-08-29",155000,"155 mil"],["2025-09-25",2771],["2025-10-03",2530],["2025-11-03",15900,""],["2025-11-12",2160],["2025-11-29",3559],["2025-12-20",29500],["2026-01-07",1927],["2026-01-15",2025],["2026-02-04",4588],["2026-02-11",2224],["2026-09-07",1399],["2026-09-16",5684],["2026-09-17",1912],["2026-10-08",1599],["2026-10-13",761],["2026-10-15",787]];
+
+  /* ===== Render ===== */
+  function el(tag, cls, html) { var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; }
+  function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+  function ddmm(iso) { return Number(iso.slice(8, 10)) + "/" + Number(iso.slice(5, 7)); }
+  function full(iso) { return iso.slice(8, 10) + "/" + iso.slice(5, 7) + "/" + iso.slice(0, 4); }
+  function dayNum(iso) { return Date.UTC(+iso.slice(0, 4), +iso.slice(5, 7) - 1, +iso.slice(8, 10)) / 864e5; }
+  var now = new Date();
+  var today = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()) / 864e5;
+
+  var SINAL = { bad: ["Crítico", "p-bad"], warn: ["Atenção", "p-warn"], good: ["Bom", "p-good"] };
+  var STATUS = { nao: ["Não começou", "p-idle"], andamento: ["Em andamento", "p-doing"], feito: ["Feito", "p-good"] };
+
+  document.getElementById("asof").textContent = full(ATUALIZADO);
+
+  var counts = { bad: 0, warn: 0, good: 0 };
+  ONDE.forEach(function (o) { counts[o[2]]++; });
+  var strip = document.getElementById("strip");
+  strip.appendChild(el("span", "count c-bad", counts.bad + " críticas"));
+  strip.appendChild(el("span", "count c-warn", counts.warn + " em atenção"));
+  strip.appendChild(el("span", "count c-good", counts.good + (counts.good === 1 ? " forte" : " fortes")));
+
+  var bfDays = dayNum(BLACK_FRIDAY) - today;
+  var cd = document.getElementById("countdown");
+  if (bfDays > 1) cd.innerHTML = "Faltam <b>" + bfDays + "</b> dias para a Black Friday (" + ddmm(BLACK_FRIDAY) + ")";
+  else if (bfDays === 1) cd.innerHTML = "A Black Friday é <b>amanhã</b>";
+  else if (bfDays >= -3) cd.innerHTML = "<b>Black Friday</b> no ar até 30/11";
+  else cd.textContent = "";
+
+  var ondeList = document.getElementById("onde-list");
+  ONDE.forEach(function (o) {
+    var r = el("div", "row");
+    r.appendChild(el("span", "t", esc(o[0])));
+    r.appendChild(el("span", "pill " + SINAL[o[2]][1], SINAL[o[2]][0]));
+    r.appendChild(el("span", "d", esc(o[1])));
+    ondeList.appendChild(r);
+  });
+
+  var gl = document.getElementById("garg-list");
+  GARGALOS.forEach(function (g) { var li = el("li"); li.appendChild(el("b", null, esc(g[0]))); li.appendChild(el("span", null, esc(g[1]))); gl.appendChild(li); });
+
+  var GROUPS = [["Até 20/11", "2026-11-20"], ["21 a 27/11", "2026-11-27"], ["Até 30/11", "2026-11-30"], ["Depois", "9999-12-31"]];
+  var acoesBox = document.getElementById("acoes");
+  var gi = 0;
+  GROUPS.forEach(function (gr, idx) {
+    var prev = idx === 0 ? "0000-00-00" : GROUPS[idx - 1][1];
+    var items = ACOES.filter(function (a) { return a[0] > prev && a[0] <= gr[1]; });
+    if (!items.length) return;
+    acoesBox.appendChild(el("div", "group-label", gr[0]));
+    var box = el("div", "rows");
+    items.forEach(function (a) {
+      var r = el("div", "act");
+      r.appendChild(el("span", "when", ddmm(a[0])));
+      var what = a[1] === "Responder a Ficha da Sarah"
+        ? 'Responder a <a href="ficha.html" target="_blank" rel="noopener">Ficha da Sarah</a>'
+        : esc(a[1]);
+      r.appendChild(el("span", "what", what));
+      r.appendChild(el("span", "pill " + STATUS[a[4]][1], STATUS[a[4]][0]));
+      r.appendChild(el("span", "meta", "Resolve: " + esc(GARGALOS[a[2] - 1][0].replace(/\.$/, "")) + " · " + esc(a[3])));
+      box.appendChild(r);
+    });
+    acoesBox.appendChild(box);
+  });
+
+  var sem = document.getElementById("semana");
+  SEMANA.forEach(function (s) { var li = el("li", s[2] ? "done" : "", "<span>" + esc(s[0]) + " <small>(" + esc(s[1]) + ")</small></span>"); sem.appendChild(li); });
+
+  var tl = document.getElementById("timeline");
+  var nowPlaced = false;
+  LINHA.forEach(function (t) {
+    var past = dayNum(t[1]) < today;
+    var current = dayNum(t[0]) <= today && today <= dayNum(t[1]);
+    var isNow = current && !nowPlaced;
+    var cls = (t[4] ? "key " : "") + (isNow ? "now " : "") + (past ? "past" : "");
+    if (current) nowPlaced = true;
+    var li = el("li", cls.trim());
+    var when = t[0] === t[1] ? ddmm(t[0]) : ddmm(t[0]) + " a " + ddmm(t[1]);
+    li.appendChild(el("span", "tdate", when));
+    li.appendChild(el("span", "dot"));
+    li.appendChild(el("span", "ttext", esc(t[2]) + (isNow ? " · agora" : "") + (t[3] ? "<small>" + esc(t[3]) + "</small>" : "")));
+    tl.appendChild(li);
+  });
+
+  var fl = document.getElementById("feito-list");
+  FEITO.forEach(function (f) {
+    var r = el("div", "row");
+    r.appendChild(el("span", "t", esc(f[1])));
+    r.appendChild(el("span", "pill p-good", ddmm(f[0])));
+    r.appendChild(el("span", "d", esc(f[2])));
+    fl.appendChild(r);
+  });
+
+  var conc = document.getElementById("conc");
+  CONC.forEach(function (c) {
+    var card = el("div", "card" + (c[8] ? " me" : ""));
+    if (c[7]) card.appendChild(el("span", "tag", "Indicado por você"));
+    card.appendChild(el("a", "name", esc(c[0]))).setAttribute("href", c[1]);
+    card.lastChild.setAttribute("target", "_blank"); card.lastChild.setAttribute("rel", "noopener");
+    card.appendChild(el("span", "meta", esc(c[2]) + " · " + esc(c[3]) + " seguidores · Google " + esc(c[4])));
+    card.appendChild(el("span", "pos", esc(c[5])));
+    card.appendChild(el("span", "good", esc(c[6])));
+    conc.appendChild(card);
+  });
+
+  /* Gráfico dos Reels: desenhado na largura real da tela, para o texto ficar legível no celular */
+  var svg = document.getElementById("reels");
+  var NS = "http://www.w3.org/2000/svg";
+  function s(tag, attrs, text) { var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); if (text != null) e.textContent = text; svg.appendChild(e); return e; }
+  var lastW = 0;
+  function drawReels() {
+  var W = Math.max(300, Math.round(svg.parentNode.clientWidth - 20));
+  if (W === lastW) return;
+  lastW = W;
+  while (svg.firstChild) svg.removeChild(svg.firstChild);
+  var narrow = W < 480, H = narrow ? 300 : 340;
+  svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+  var L = narrow ? 46 : 58, R = W - 8, T = 14, B = H - 44, LMIN = 2.6, LMAX = 5.5;
+  var fs = narrow ? 10.5 : 12;
+  var lo = dayNum(REELS[0][0]), hi = dayNum(REELS[REELS.length - 1][0]);
+  function X(iso) { return L + (dayNum(iso) - lo) / (hi - lo) * (R - L); }
+  function Y(v) { return B - (Math.log10(v) - LMIN) / (LMAX - LMIN) * (B - T); }
+  var ink = "var(--ink)", muted = "var(--muted)", line = "var(--line)";
+  var g0 = "2026-03-01", g1 = "2026-08-31";
+  s("rect", { x: X(g0), y: T, width: X(g1) - X(g0), height: B - T, fill: "var(--wine-soft)" });
+  [1000, 10000, 100000].forEach(function (v, i) {
+    s("line", { x1: L, x2: R, y1: Y(v), y2: Y(v), stroke: line, "stroke-width": 1 });
+    s("text", { x: L - 6, y: Y(v) + 4, "text-anchor": "end", "font-size": fs, fill: muted }, ["1 mil", "10 mil", "100 mil"][i]);
+  });
+  s("line", { x1: L, x2: R, y1: B, y2: B, stroke: muted, "stroke-width": 1 });
+  ["2024", "2025", "2026"].forEach(function (yr) {
+    var x = X(yr + "-01-01");
+    s("line", { x1: x, x2: x, y1: B, y2: B + 5, stroke: muted });
+    s("text", { x: x, y: B + 19, "text-anchor": "middle", "font-size": fs, fill: muted }, yr);
+  });
+  var recent = REELS.filter(function (r) { return r[0] >= "2026-09-01"; }).map(function (r) { return r[1]; }).sort(function (a, b) { return a - b; });
+  var n = recent.length, med = n % 2 ? recent[(n - 1) / 2] : (recent[n / 2 - 1] + recent[n / 2]) / 2;
+  s("line", { x1: L, x2: R, y1: Y(med), y2: Y(med), stroke: "var(--gold)", "stroke-width": 1.4, "stroke-dasharray": "4 4" });
+  var gx = (X(g0) + X(g1)) / 2;
+  s("text", { x: gx, y: Y(med) - 19, "text-anchor": "middle", "font-size": fs, fill: muted }, "mediana");
+  s("text", { x: gx, y: Y(med) - 6, "text-anchor": "middle", "font-size": fs + 0.5, "font-weight": 700, fill: ink }, (med / 1000).toLocaleString("pt-BR", { maximumFractionDigits: 1 }) + " mil");
+  s("text", { x: gx, y: B - 22, "text-anchor": "middle", "font-size": fs, fill: muted }, "6 meses");
+  s("text", { x: gx, y: B - 8, "text-anchor": "middle", "font-size": fs, fill: muted }, "sem posts");
+  REELS.forEach(function (r) {
+    var acc = r.length > 2;
+    var c = s("circle", { cx: X(r[0]), cy: Y(r[1]), r: acc ? 5 : 3.4, fill: acc ? "var(--wine)" : "var(--muted)", "fill-opacity": acc ? 1 : 0.45 });
+    var t = document.createElementNS(NS, "title"); t.textContent = full(r[0]) + ": " + r[1].toLocaleString("pt-BR") + " visualizações"; c.appendChild(t);
+  });
+  var labeled = REELS.filter(function (r) { return r[2]; });
+  var lx = Math.min.apply(null, labeled.map(function (r) { return X(r[0]); })) - 14;
+  labeled.forEach(function (r) {
+    s("line", { x1: X(r[0]) - 7, x2: lx + 4, y1: Y(r[1]), y2: Y(r[1]), stroke: "var(--wine)", "stroke-width": 1 });
+    s("text", { x: lx, y: Y(r[1]) + 4, "text-anchor": "end", "font-size": fs + 1, "font-weight": 700, fill: ink }, r[2]);
+  });
+  }
+  drawReels();
+  window.addEventListener("resize", drawReels);
+  var det = svg.closest("details");
+  if (det) det.addEventListener("toggle", drawReels);
+
+  /* Copiar pedidos */
+  document.querySelectorAll("button.copy").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var pre = document.getElementById(b.getAttribute("data-copy"));
+      var text = pre.textContent;
+      function selectIt() { var rng = document.createRange(); rng.selectNodeContents(pre); var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(rng); b.textContent = "Texto selecionado: copie"; }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { b.textContent = "Copiado"; setTimeout(function () { b.textContent = "Copiar"; }, 1800); }, selectIt);
+      } else { selectIt(); }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
