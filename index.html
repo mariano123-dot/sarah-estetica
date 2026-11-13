@@ -164,6 +164,19 @@ svg.reels text { font-family: var(--font-body); }
 .p-res { background: var(--good-soft); color: var(--good); }
 .p-sou { background: var(--gold-soft); color: var(--gold); }
 .cal-week { font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); margin-top: 6px; }
+.links { display: flex; flex-wrap: wrap; gap: 8px; }
+.vlink { display: inline-flex; flex-direction: column; gap: 1px; padding: 9px 13px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); text-decoration: none; color: var(--ink); font-size: 14px; }
+.vlink b { color: var(--wine); font-size: 16px; font-variant-numeric: tabular-nums; }
+.vlink:hover, .ilink:hover, .plink:hover { border-color: var(--wine); }
+.irow { display: grid; grid-template-columns: minmax(150px, 210px) minmax(0, 1fr); gap: 6px 14px; padding: 12px 15px; border-top: 1px solid var(--line); align-items: center; }
+.irow:first-child { border-top: 0; }
+.irow .iname { font-weight: 600; }
+.irow .ilinks { display: flex; flex-wrap: wrap; gap: 6px; }
+.ilink { font-size: 13px; padding: 6px 11px; border-radius: 99px; border: 1px solid var(--line); text-decoration: none; color: var(--ink); background: var(--bg); }
+.ilink span, .vlink span { color: var(--muted); }
+.plink { text-decoration: none; color: var(--ink); border: 1px solid var(--line); }
+.plink .name { color: var(--wine); }
+@media (max-width: 460px) { .irow { grid-template-columns: 1fr; } }
 ul.rules li::before { width: 8px; height: 8px; margin: 9px 0 0 4px; border: 0; border-radius: 50%; background: var(--gold); }
 .note { background: var(--gold-soft); border-radius: 12px; padding: 12px 14px; font-size: 15px; }
 pre.prompt { white-space: pre-wrap; background: var(--bg); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; font-size: 13.5px; line-height: 1.5; margin: 0; font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
@@ -197,7 +210,7 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
       <a class="btn" href="ficha.html" target="_blank" rel="noopener">Responder a ficha</a>
     </div>
     <nav class="toc" aria-label="Seções">
-      <a href="#onde">Onde estamos</a><a href="#gargalos">Gargalos</a><a href="#resolver">Como resolver</a><a href="#passos">Próximos passos</a><a href="#conteudo">Conteúdo</a><a href="#feito">Já feito</a><a href="#analise">Análise</a>
+      <a href="#onde">Onde estamos</a><a href="#gargalos">Gargalos</a><a href="#resolver">Como resolver</a><a href="#passos">Próximos passos</a><a href="#conteudo">Conteúdo</a><a href="#inspiracoes">Inspirações</a><a href="#feito">Já feito</a><a href="#analise">Análise</a>
     </nav>
   </header>
 
@@ -228,7 +241,7 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
   <section id="conteudo" aria-labelledby="h-con">
     <div class="sec-head"><span class="sec-num">5</span><div><h2 id="h-con">Conteúdo: estilos e ideias</h2><p class="sec-lead">Vídeos que ensinam e mostram que você é referência, sem perder o seu jeito. São 3 Reels por semana, um de cada P: segunda "Provo que faço", quarta "Provo quem sou", sexta "Provo que resolvo".</p></div></div>
     <div class="note">
-      <b>O que os números mostram.</b> Vídeo educativo puro, como o "mito ou verdade", costuma ficar entre 70 e 700 curtidas nos perfis de estética que analisamos. Ele educa e passa confiança, mas raramente estoura sozinho. O que estoura tem gancho forte: humor e trend (a Gabi Laudeauser teve 319 mil e 641 mil visualizações), opinião contra a corrente (um vídeo assim teve 1.228 comentários) e pergunta ao público (a Duda Rocha teve 105 comentários com "quantos anos ela rejuvenesceu?"). Por isso o educativo entra sempre com gancho, e o pessoal continua no mix.
+      <b>O que os números mostram.</b> Vídeo educativo puro, como o "mito ou verdade", costuma ficar entre 70 e 700 curtidas nos perfis de estética que analisamos. Ele educa e passa confiança, mas raramente estoura sozinho. O que estoura tem gancho forte: humor e trend (a Gabi Laudeauser teve 319 mil e 641 mil visualizações), opinião contra a corrente (um post assim teve 642 comentários) e pergunta ao público (a Duda Rocha teve 105 comentários com "quantos anos ela rejuvenesceu?"). Por isso o educativo entra sempre com gancho, e o pessoal continua no mix.
     </div>
     <h3>Estilos que educam e dão autoridade</h3>
     <div class="cards" id="estilos"></div>
@@ -247,13 +260,24 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
     </ul>
   </section>
 
+  <section id="inspiracoes" aria-labelledby="h-ins">
+    <div class="sec-head"><span class="sec-num">6</span><div><h2 id="h-ins">Inspirações</h2><p class="sec-lead">Vídeos e perfis para assistir juntos antes de gravar. Cada link abre no Instagram, numa aba nova.</p></div></div>
+    <h3>Comece pelos seus</h3>
+    <p class="legend">Os seus vídeos que mais deram alcance: o caminho já existe no seu perfil.</p>
+    <div class="links" id="insp-sarah"></div>
+    <h3>Um exemplo para cada estilo</h3>
+    <div class="rows" id="insp-estilos"></div>
+    <h3>Perfis para acompanhar</h3>
+    <div class="cards" id="insp-perfis"></div>
+  </section>
+
   <section id="feito" aria-labelledby="h-fei">
-    <div class="sec-head"><span class="sec-num">6</span><div><h2 id="h-fei">O que já foi feito</h2><p class="sec-lead">O mais recente primeiro.</p></div></div>
+    <div class="sec-head"><span class="sec-num">7</span><div><h2 id="h-fei">O que já foi feito</h2><p class="sec-lead">O mais recente primeiro.</p></div></div>
     <div class="rows" id="feito-list"></div>
   </section>
 
   <section id="analise" aria-labelledby="h-ana">
-    <div class="sec-head"><span class="sec-num">7</span><div><h2 id="h-ana">Análise de apoio</h2><p class="sec-lead">Levantada em 13/11/2026 no seu Instagram, no Google, nos perfis da concorrência e na Biblioteca de Anúncios da Meta. Toque para abrir.</p></div></div>
+    <div class="sec-head"><span class="sec-num">8</span><div><h2 id="h-ana">Análise de apoio</h2><p class="sec-lead">Levantada em 13/11/2026 no seu Instagram, no Google, nos perfis da concorrência e na Biblioteca de Anúncios da Meta. Toque para abrir.</p></div></div>
 
     <div>
     <details open>
@@ -579,6 +603,7 @@ citando o procedimento e o nome da paciente, sem exagero:
   ];
 
   var FEITO = [
+    ["2026-11-13", "Seção Inspirações com links diretos", "Seus 6 melhores vídeos, um exemplo para cada estilo e 8 perfis para acompanhar"],
     ["2026-11-13", "14 estilos de conteúdo e calendário das 4 primeiras semanas", "Seção Conteúdo, com base em 68 Reels de concorrentes e numa busca por \"mito ou verdade\""],
     ["2026-11-13", "Plano de ação publicado como página aberta", "Este link"],
     ["2026-11-13", "Pergunta sobre cursos e certificações incluída na ficha", "Base para mostrar autoridade"],
@@ -610,7 +635,7 @@ citando o procedimento e o nome da paciente, sem exagero:
     ["Saber dizer não", "faco", "Você conta, sem expor ninguém, um caso em que não fez o procedimento e por quê.", "3 casos em que eu não faço preenchimento labial", "Recusar é a maior prova de autoridade. \"Saber dizer não também é harmonização\" teve 17,4 mil visualizações no perfil do Maurício Alves.", ["Quando a paciente quer o rosto de outra pessoa", "Quando o lábio já tem produto demais", "Quando o problema não se resolve com agulha", "Quando a expectativa não é realista"], 1],
     ["Sarah responde", "faco", "A pergunta real de uma paciente aparece na tela, sem nome, e você responde em até 30 segundos. O destaque com esse nome já existe no seu perfil.", "\"Sarah, quanto tempo dura o preenchimento labial?\"", "Responde a dúvida que trava a compra e alimenta o destaque.", ["Quanto tempo dura?", "Dói?", "Fica roxo?", "Quantas sessões eu preciso?", "Posso fazer antes de um evento?"], 1],
     ["X ou Y?", "faco", "Duas opções lado a lado, e você explica quando usar cada uma.", "Toxina ou preenchimento: qual resolve a sua ruga?", "Fala com quem está pesquisando e mostra que a indicação vem antes do procedimento.", ["Toxina ou preenchimento?", "Bioestimulador ou ácido hialurônico?", "Rinomodelação ou cirurgia?", "Full face de uma vez ou por etapas?"], 1],
-    ["Opinião forte", "faco", "Uma frase que vai contra o que todo mundo fala, dita com segurança, e o porquê em 20 segundos. Sem citar colegas.", "Escolher harmonização pelo preço é o erro mais caro. E eu explico por quê.", "Opinião gera conversa: um vídeo de estética contra a corrente teve 1.228 comentários.", ["Nem todo rosto precisa de preenchimento", "Seguir trend de boca é o jeito mais rápido de se arrepender", "A avaliação vale mais que o produto", "Naturalidade não é fazer pouco, é fazer certo"], 1],
+    ["Opinião forte", "faco", "Uma frase que vai contra o que todo mundo fala, dita com segurança, e o porquê em 20 segundos. Sem citar colegas.", "Escolher harmonização pelo preço é o erro mais caro. E eu explico por quê.", "Opinião gera conversa: um post de estética contra a corrente teve 11 mil curtidas e 642 comentários (link em Inspirações).", ["Nem todo rosto precisa de preenchimento", "Seguir trend de boca é o jeito mais rápido de se arrepender", "A avaliação vale mais que o produto", "Naturalidade não é fazer pouco, é fazer certo"], 1],
     ["Por dentro do procedimento", "faco", "Você narra enquanto atende: a marcação com lápis, o produto, a agulha, o porquê de cada ponto.", "O que eu estou fazendo agora no nariz dela, e por quê", "Mostra técnica de verdade, ao vivo.", ["A marcação antes do preenchimento labial", "Rinomodelação passo a passo", "A caixa e o lote do produto", "Como é a sua avaliação"], 1],
     ["3 sinais de que...", "faco", "Uma lista curta de três itens, um por tela, com você explicando cada um em uma frase.", "3 sinais de que o seu preenchimento precisa de manutenção", "Lista curta prende até o fim e a pessoa salva para conferir depois.", ["3 sinais de que o preenchimento precisa de manutenção", "3 sinais de que você vai gostar da rinomodelação", "3 sinais de uma boa avaliação", "3 erros no pós que estragam o resultado"], 1],
     ["Antes e depois com a queixa", "res", "Tela dividida com o antes e o depois, e a frase da paciente escrita em cima.", "Ela chegou dizendo que não se reconhecia mais no espelho", "Termine com uma pergunta ao público: a Duda Rocha teve 105 comentários com \"quantos anos ela rejuvenesceu?\".", ["Lábios: o que mudou nela?", "Rinomodelação de perfil", "Olheiras: quantos anos ela rejuvenesceu?", "Full face na manutenção anual"], 2],
@@ -635,6 +660,43 @@ citando o procedimento e o nome da paciente, sem exagero:
     ["2026-12-14", "faco", "X ou Y?", "Toxina ou preenchimento: qual resolve a sua ruga?"],
     ["2026-12-16", "sou", "Trend e POV de humor", "Fim de ano na clínica"],
     ["2026-12-18", "res", "Depoimento no espelho", "Paciente que voltou um ano depois, lembrando que dá para agendar no valor atual até 31/12"]
+  ];
+
+  /* Inspirações. Links: "reel/CODIGO" ou "p/CODIGO" (viram https://www.instagram.com/...) */
+  var INSP_SARAH = [
+    ["241 mil", "Você entrando na clínica", "reel/DMksy59sQie"],
+    ["155 mil", "POV da cliente fiel", "reel/DN9O9NegNzX"],
+    ["108 mil", "Selfie em trend", "reel/DLqaKp7sI_8"],
+    ["62,5 mil", "Risadas no atendimento", "reel/DMS_E7ds0CM"],
+    ["29,5 mil", "Manutenção anual de perfil", "reel/DSf_-UPEQhg"],
+    ["15,9 mil", "Sua mãe fazendo procedimento", "reel/DQnCl0IjQUg"]
+  ];
+  /* [estilo, [[quem, o que olhar, link], ...]] */
+  var INSP_ESTILOS = [
+    ["Trend e POV de humor", [["Gabi Laudeauser", "319 mil visualizações", "reel/Deur2qiPLJW"], ["Gabi Laudeauser", "400 mil visualizações", "reel/DZ5zjhdPN96"]]],
+    ["Transição de antes e depois", [["Gabi Laudeauser", "641 mil visualizações", "reel/DZxe6eLPrss"]]],
+    ["Antes e depois com a queixa", [["Gabi Laudeauser", "158 mil visualizações", "reel/DavLlvpvGKP"], ["Duda Rocha", "105 comentários", "reel/DdcAYL0TPn2"], ["André Allisson", "117 mil visualizações", "reel/DeHRZQrxp3l"]]],
+    ["Saber dizer não", [["Maurício Alves", "17,4 mil visualizações", "reel/DfSfIp1Rz0x"]]],
+    ["Método com nome próprio", [["Maurício Alves", "Brazilian Face", "reel/DfW2UDXAIIl"], ["Duda Rocha", "Perfil Perfeito", "reel/DeUeSCWRIJn"]]],
+    ["Sarah responde", [["Gabi Laudeauser", "uma pergunta que ela mais recebe", "reel/DaVuYBxPsm0"]]],
+    ["Por dentro do procedimento", [["André Allisson", "escultura labial", "reel/De12azGREkX"], ["Gabi Laudeauser", "edema tardio explicado", "reel/Ddwrw1lpCjO"]]],
+    ["Mito ou verdade", [["@drafernandasecco", "2,6 mil curtidas", "p/DcgSSE4xj9Y"], ["@clinicanutribella", "idade para começar o botox", "p/Dd2BsANSaZZ"]]],
+    ["Pergunta ao público", [["@drasarahscolar", "46 comentários", "p/DZvo7txBHL9"]]],
+    ["Opinião forte", [["@drwilliamaraujo", "642 comentários", "p/DdJv-2mjvch"]]],
+    ["Bastidor da formação", [["Duda Rocha", "certificação internacional", "reel/DceNdH8z51b"]]],
+    ["Vida pessoal", [["Andressa Gomes", "78,8 mil visualizações", "reel/Dd7U-OCIdKe"]]],
+    ["Vídeo com anúncio pago", [["Anna Sarah", "vizinha do JK, \"vai doer?\"", "reel/DdFhNuDP9U6"]]]
+  ];
+  /* [nome, @, seguidores, o que observar] */
+  var INSP_PERFIS = [
+    ["Gabi Laudeauser", "dra.gabrielalaudeauser", "18,9 mil", "Farmacêutica como você. Trend, humor e glow up quase toda semana."],
+    ["Dr. André Allisson", "drandreallisson", "34,7 mil", "No mesmo complexo do JK. Full face com resultado e congressos nos destaques."],
+    ["Dra. Duda Rocha", "dra.dudarocha", "13,8 mil", "Marca com nome (Perfil Perfeito, New Skin) e vida pessoal no meio dos resultados."],
+    ["Dr. Maurício Alves", "dr.mauricioalves", "356 mil", "Método com nome, posta todo dia e anuncia pedindo comentário."],
+    ["Dra. Andressa Gomes", "dra_andressagomes", "287 mil", "A maior da região: vida pessoal e resultado natural."],
+    ["Anna Sarah Estética", "annasarah.estetica", "4,5 mil", "Vizinha de prédio que anuncia para Ceilândia e Samambaia."],
+    ["Dra. Silmara Varela", "drasilmaravarela", "14,9 mil", "No mesmo endereço que você, com 112 avaliações no Google."],
+    ["Dra. Katyara Araújo", "drakatyaraaraujo", "2,7 mil", "Do seu tamanho, mas posta toda semana."]
   ];
 
   /* Reels da Sarah: [data, visualizações, rótulo] (rótulo vazio = pessoal sem rótulo; null = outro) */
@@ -774,6 +836,28 @@ citando o procedimento e o nome da paciente, sem exagero:
     });
     cal.appendChild(cbox);
   }
+
+  function ig(path) { return "https://www.instagram.com/" + path + "/"; }
+  function extLink(cls, href, html) { var a = el("a", cls, html); a.setAttribute("href", href); a.setAttribute("target", "_blank"); a.setAttribute("rel", "noopener"); return a; }
+  var insS = document.getElementById("insp-sarah");
+  INSP_SARAH.forEach(function (v) { insS.appendChild(extLink("vlink", ig(v[2]), "<b>" + esc(v[0]) + "</b><span>" + esc(v[1]) + " ↗</span>")); });
+  var insE = document.getElementById("insp-estilos");
+  INSP_ESTILOS.forEach(function (s) {
+    var r = el("div", "irow");
+    r.appendChild(el("span", "iname", esc(s[0])));
+    var box = el("div", "ilinks");
+    s[1].forEach(function (l) { box.appendChild(extLink("ilink", ig(l[2]), esc(l[0]) + " <span>· " + esc(l[1]) + " ↗</span>")); });
+    r.appendChild(box);
+    insE.appendChild(r);
+  });
+  var insP = document.getElementById("insp-perfis");
+  INSP_PERFIS.forEach(function (p) {
+    var card = extLink("card plink", ig(p[1]), "");
+    card.appendChild(el("span", "name", esc(p[0]) + " ↗"));
+    card.appendChild(el("span", "meta", "@" + esc(p[1]) + " · " + esc(p[2]) + " seguidores"));
+    card.appendChild(el("span", "good", esc(p[3])));
+    insP.appendChild(card);
+  });
 
   /* Gráfico dos Reels: desenhado na largura real da tela, para o texto ficar legível no celular */
   var svg = document.getElementById("reels");
