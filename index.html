@@ -153,6 +153,18 @@ svg.reels text { font-family: var(--font-body); }
 .card .pos { font-size: 14px; font-style: italic; }
 .card .good { font-size: 14px; }
 .tag { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--gold); }
+.style-card { background: var(--surface); gap: 8px; }
+.style-card .name { font-family: var(--font-display); font-weight: 400; font-size: 21px; color: var(--wine); line-height: 1.15; }
+.style-card .how { font-size: 14px; }
+.style-card .hook { font-size: 14px; background: var(--bg); border-left: 3px solid var(--gold); padding: 6px 10px; border-radius: 0 8px 8px 0; }
+.style-card .why { font-size: 13px; color: var(--muted); }
+.style-card ul { margin: 0; padding-left: 18px; font-size: 14px; display: flex; flex-direction: column; gap: 3px; }
+.style-card .lbl { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.p-faco { background: var(--wine-soft); color: var(--wine); }
+.p-res { background: var(--good-soft); color: var(--good); }
+.p-sou { background: var(--gold-soft); color: var(--gold); }
+.cal-week { font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); margin-top: 6px; }
+ul.rules li::before { width: 8px; height: 8px; margin: 9px 0 0 4px; border: 0; border-radius: 50%; background: var(--gold); }
 .note { background: var(--gold-soft); border-radius: 12px; padding: 12px 14px; font-size: 15px; }
 pre.prompt { white-space: pre-wrap; background: var(--bg); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; font-size: 13.5px; line-height: 1.5; margin: 0; font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
 .copy { align-self: flex-start; font: inherit; font-size: 13px; font-weight: 600; color: var(--wine); background: transparent; border: 1px solid var(--wine); border-radius: 99px; padding: 6px 12px; cursor: pointer; }
@@ -185,7 +197,7 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
       <a class="btn" href="ficha.html" target="_blank" rel="noopener">Responder a ficha</a>
     </div>
     <nav class="toc" aria-label="Seções">
-      <a href="#onde">Onde estamos</a><a href="#gargalos">Gargalos</a><a href="#resolver">Como resolver</a><a href="#passos">Próximos passos</a><a href="#feito">Já feito</a><a href="#analise">Análise</a>
+      <a href="#onde">Onde estamos</a><a href="#gargalos">Gargalos</a><a href="#resolver">Como resolver</a><a href="#passos">Próximos passos</a><a href="#conteudo">Conteúdo</a><a href="#feito">Já feito</a><a href="#analise">Análise</a>
     </nav>
   </header>
 
@@ -213,13 +225,35 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
     <ul class="timeline" id="timeline"></ul>
   </section>
 
+  <section id="conteudo" aria-labelledby="h-con">
+    <div class="sec-head"><span class="sec-num">5</span><div><h2 id="h-con">Conteúdo: estilos e ideias</h2><p class="sec-lead">Vídeos que ensinam e mostram que você é referência, sem perder o seu jeito. São 3 Reels por semana, um de cada P: segunda "Provo que faço", quarta "Provo quem sou", sexta "Provo que resolvo".</p></div></div>
+    <div class="note">
+      <b>O que os números mostram.</b> Vídeo educativo puro, como o "mito ou verdade", costuma ficar entre 70 e 700 curtidas nos perfis de estética que analisamos. Ele educa e passa confiança, mas raramente estoura sozinho. O que estoura tem gancho forte: humor e trend (a Gabi Laudeauser teve 319 mil e 641 mil visualizações), opinião contra a corrente (um vídeo assim teve 1.228 comentários) e pergunta ao público (a Duda Rocha teve 105 comentários com "quantos anos ela rejuvenesceu?"). Por isso o educativo entra sempre com gancho, e o pessoal continua no mix.
+    </div>
+    <h3>Estilos que educam e dão autoridade</h3>
+    <div class="cards" id="estilos"></div>
+    <h3>Estilos que mostram resultado e quem você é</h3>
+    <div class="cards" id="estilos2"></div>
+    <h3>As 4 primeiras semanas</h3>
+    <p class="legend">As respostas dos "mito ou verdade" e dos "X ou Y" são suas, com a sua experiência: a gente traz a pergunta e o formato.</p>
+    <div id="calendario"></div>
+    <h3>Regras de todo vídeo</h3>
+    <ul class="check rules">
+      <li><span>Gancho nos 2 primeiros segundos: a frase do vídeo aparece escrita na tela.</span></li>
+      <li><span>Uma ideia por vídeo, até 40 segundos.</span></li>
+      <li><span>Legenda na tela, porque muita gente assiste sem som.</span></li>
+      <li><span>Termina com pedido de ação: "agende sua avaliação no link" ou "comenta EU QUERO".</span></li>
+      <li><span>Nunca prometer resultado. Antes e depois só com autorização assinada e dentro das regras do CRF.</span></li>
+    </ul>
+  </section>
+
   <section id="feito" aria-labelledby="h-fei">
-    <div class="sec-head"><span class="sec-num">5</span><div><h2 id="h-fei">O que já foi feito</h2><p class="sec-lead">O mais recente primeiro.</p></div></div>
+    <div class="sec-head"><span class="sec-num">6</span><div><h2 id="h-fei">O que já foi feito</h2><p class="sec-lead">O mais recente primeiro.</p></div></div>
     <div class="rows" id="feito-list"></div>
   </section>
 
   <section id="analise" aria-labelledby="h-ana">
-    <div class="sec-head"><span class="sec-num">6</span><div><h2 id="h-ana">Análise de apoio</h2><p class="sec-lead">Levantada em 13/11/2026 no seu Instagram, no Google, nos perfis da concorrência e na Biblioteca de Anúncios da Meta. Toque para abrir.</p></div></div>
+    <div class="sec-head"><span class="sec-num">7</span><div><h2 id="h-ana">Análise de apoio</h2><p class="sec-lead">Levantada em 13/11/2026 no seu Instagram, no Google, nos perfis da concorrência e na Biblioteca de Anúncios da Meta. Toque para abrir.</p></div></div>
 
     <div>
     <details open>
@@ -339,11 +373,7 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
       <summary><span>Método dos 3 P's<small>3 Reels por semana, um de cada P</small></span></summary>
       <div class="det-body">
         <p>Meta: 3 Reels por semana, mais 1 carrossel de resultado e stories em todo dia de atendimento. Todo vídeo termina com um pedido de ação: "agende sua avaliação no link" ou "comenta EU QUERO".</p>
-        <div class="three">
-          <div class="p3"><span class="k">Provo que faço</span><span class="legend">Segunda · mostrar que você sabe o que faz</span><ol><li>Procedimento ao vivo, com você narrando</li><li>"Não faço em você se..."</li><li>Mito ou verdade em 15 segundos</li><li>A marcação com lápis antes da agulha</li><li>A caixa e o lote do produto</li></ol></div>
-          <div class="p3"><span class="k">Provo que resolvo</span><span class="legend">Sexta · outras pessoas dizendo que funciona</span><ol><li>Depoimento de 20 segundos no espelho</li><li>Antes e depois com a queixa escrita na tela</li><li>Mensagem de paciente, com autorização</li><li>Paciente que voltou um ano depois</li><li>Mosaico de mais de mil pacientes</li></ol></div>
-          <div class="p3"><span class="k">Provo quem sou</span><span class="legend">Quarta · criar vínculo com você</span><ol><li>Trend ou POV de humor da rotina</li><li>Família ou amiga fazendo procedimento</li><li>"Eu fiz em mim primeiro"</li><li>Por que você virou farmacêutica esteta</li><li>Um dia fora da clínica</li></ol></div>
-        </div>
+        <p>Os estilos, as ideias prontas e o calendário das primeiras semanas estão na seção <a href="#conteudo">Conteúdo</a>.</p>
         <h3>Rotina</h3>
         <ul>
           <li>Um turno de gravação por semana para os 3 Reels da semana seguinte.</li>
@@ -516,8 +546,8 @@ citando o procedimento e o nome da paciente, sem exagero:
     ["2026-11-20", "Comprar microfone, softbox e tripé", 1, "Você", "nao"],
     ["2026-11-21", "Fechar a oferta da Black Friday", 5, "Nós", "nao"],
     ["2026-11-21", "Rotina do Grupo VIP: dica semanal e vagas em primeira mão", 4, "Você", "nao"],
-    ["2026-11-24", "Começar os 3 Reels por semana, um de cada P", 1, "Você", "nao"],
-    ["2026-11-24", "Pedido de ação no fim de todo vídeo", 3, "Você", "nao"],
+    ["2026-11-23", "Começar os 3 Reels por semana, seguindo o calendário de Conteúdo", 1, "Você", "nao"],
+    ["2026-11-23", "Pedido de ação no fim de todo vídeo", 3, "Você", "nao"],
     ["2026-11-25", "Escolher o seu ângulo e dar nome ao seu jeito de trabalhar", 2, "Juntos", "nao"],
     ["2026-11-27", "Mensagens automáticas: dia seguinte, 7 dias, manutenção e aniversário", 4, "Você", "nao"],
     ["2026-11-30", "Definir a tabela de valores de janeiro", 5, "Juntos", "nao"]
@@ -532,7 +562,7 @@ citando o procedimento e o nome da paciente, sem exagero:
     ["Criar as etiquetas no WhatsApp Business e a planilha de pacientes", "nós", false],
     ["Comprar microfone, softbox e tripé", "você", false],
     ["Avisar nos stories que a Black Friday será só no Grupo VIP", "você", false],
-    ["Gravar os 3 primeiros Reels, um de cada P, para publicar a partir de 24/11", "você", false]
+    ["Gravar os 3 Reels da semana de 23/11, que estão no calendário de Conteúdo", "você", false]
   ];
 
   /* [início, fim, texto, detalhe, destaque] */
@@ -540,7 +570,7 @@ citando o procedimento e o nome da paciente, sem exagero:
     ["2026-11-13", "2026-11-13", "Aula de IA", "", false],
     ["2026-11-13", "2026-11-20", "Arrumar a casa", "Ficha respondida, bio e destaques, Google, CRM e equipamentos", false],
     ["2026-11-14", "2026-11-26", "Aquecimento da Black Friday", "Stories, um Reel e conteúdo no Grupo VIP", false],
-    ["2026-11-24", "2027-01-31", "3 Reels por semana", "Um de cada P, toda semana", false],
+    ["2026-11-23", "2027-01-31", "3 Reels por semana", "Segunda, quarta e sexta, um de cada P", false],
     ["2026-11-27", "2026-11-30", "Black Friday no Grupo VIP", "O último preço de 2026, com vagas limitadas", true],
     ["2026-11-30", "2026-11-30", "Tabela nova definida", "", false],
     ["2026-12-01", "2026-12-31", "Agenda no valor atual", "Aviso dos valores novos e última chance no valor de hoje", false],
@@ -549,6 +579,7 @@ citando o procedimento e o nome da paciente, sem exagero:
   ];
 
   var FEITO = [
+    ["2026-11-13", "Estilos de conteúdo e calendário das 4 primeiras semanas", "Seção Conteúdo, com base em 68 Reels de concorrentes e numa busca por \"mito ou verdade\""],
     ["2026-11-13", "Plano de ação publicado como página aberta", "Este link"],
     ["2026-11-13", "Pergunta sobre cursos e certificações incluída na ficha", "Base para mostrar autoridade"],
     ["2026-11-13", "Mapeados os 3 concorrentes que você indicou", "Os três têm marca com nome próprio; André Allisson também atende no JK"],
@@ -570,6 +601,38 @@ citando o procedimento e o nome da paciente, sem exagero:
     ["Instituto Harmonizar", "https://www.instagram.com/institutoharmonizar.bsb/", "Asa Sul e Taguatinga", "15,1 mil", "4,7 (71)", "\"Condições especiais todo mês\"", "Promoção mensal, mas pouco alcance nos Reels", false, false],
     ["Royal Face Taguatinga", "https://www.instagram.com/royalface.taguatinga/", "Taguatinga Sul", "14,6 mil", "4,6 (179)", "Rede de franquia, preço fechado", "Vende procedimento online com preço público", false, false],
     ["Dra. Katyara Araújo", "https://www.instagram.com/drakatyaraaraujo/", "Taguatinga Norte", "2,7 mil", "5,0 (25)", "\"Referência em rejuvenescimento facial\"", "Posta toda semana; post de aniversário com 53 comentários", false, false]
+  ];
+
+  /* Estilos de conteúdo: [nome, P (faco | res | sou), como gravar, gancho de exemplo, por que funciona, ideias, grupo 1 ou 2] */
+  var ESTILOS = [
+    ["Mito ou verdade", "faco", "Você de frente para a câmera. A frase aparece escrita na tela, você responde \"mito\" ou \"verdade\" e explica em até 30 segundos.", "Mito ou verdade: preenchimento labial derrete com o tempo?", "Educa e faz a pessoa salvar o vídeo. Para render mais, termine perguntando: \"qual mito você já ouviu?\"", ["Toxina botulínica vicia?", "Quem faz harmonização fica com cara de harmonizada?", "Depois dos 40 não adianta mais?", "Rinomodelação substitui a cirurgia?", "Pode malhar no dia do procedimento?"], 1],
+    ["Use isto, não isto", "faco", "Tela dividida: à esquerda o erro com um X, à direita o certo com um ✓. Você explica a diferença em uma frase.", "Não escolha sua harmonizadora assim. Escolha assim.", "Mostra critério de profissional e se entende em 3 segundos.", ["Escolher pelo preço x escolher pela avaliação", "Pedir \"a boca da famosa\" x pedir o que combina com o seu rosto", "Volume demais no lábio x desenho e contorno", "Cuidado errado no pós x cuidado certo no pós", "Fazer tudo de uma vez x planejar por etapas"], 1],
+    ["Saber dizer não", "faco", "Você conta, sem expor ninguém, um caso em que não fez o procedimento e por quê.", "3 casos em que eu não faço preenchimento labial", "Recusar é a maior prova de autoridade. \"Saber dizer não também é harmonização\" teve 17,4 mil visualizações no perfil do Maurício Alves.", ["Quando a paciente quer o rosto de outra pessoa", "Quando o lábio já tem produto demais", "Quando o problema não se resolve com agulha", "Quando a expectativa não é realista"], 1],
+    ["Sarah responde", "faco", "A pergunta real de uma paciente aparece na tela, sem nome, e você responde em até 30 segundos. O destaque com esse nome já existe no seu perfil.", "\"Sarah, quanto tempo dura o preenchimento labial?\"", "Responde a dúvida que trava a compra e alimenta o destaque.", ["Quanto tempo dura?", "Dói?", "Fica roxo?", "Quantas sessões eu preciso?", "Posso fazer antes de um evento?"], 1],
+    ["X ou Y?", "faco", "Duas opções lado a lado, e você explica quando usar cada uma.", "Toxina ou preenchimento: qual resolve a sua ruga?", "Fala com quem está pesquisando e mostra que a indicação vem antes do procedimento.", ["Toxina ou preenchimento?", "Bioestimulador ou ácido hialurônico?", "Rinomodelação ou cirurgia?", "Full face de uma vez ou por etapas?"], 1],
+    ["Opinião forte", "faco", "Uma frase que vai contra o que todo mundo fala, dita com segurança, e o porquê em 20 segundos. Sem citar colegas.", "Escolher harmonização pelo preço é o erro mais caro. E eu explico por quê.", "Opinião gera conversa: um vídeo de estética contra a corrente teve 1.228 comentários.", ["Nem todo rosto precisa de preenchimento", "Seguir trend de boca é o jeito mais rápido de se arrepender", "A avaliação vale mais que o produto", "Naturalidade não é fazer pouco, é fazer certo"], 1],
+    ["Por dentro do procedimento", "faco", "Você narra enquanto atende: a marcação com lápis, o produto, a agulha, o porquê de cada ponto.", "O que eu estou fazendo agora no nariz dela, e por quê", "Mostra técnica de verdade, ao vivo.", ["A marcação antes do preenchimento labial", "Rinomodelação passo a passo", "A caixa e o lote do produto", "Como é a sua avaliação"], 1],
+    ["Antes e depois com a queixa", "res", "Tela dividida com o antes e o depois, e a frase da paciente escrita em cima.", "Ela chegou dizendo que não se reconhecia mais no espelho", "Termine com uma pergunta ao público: a Duda Rocha teve 105 comentários com \"quantos anos ela rejuvenesceu?\".", ["Lábios: o que mudou nela?", "Rinomodelação de perfil", "Olheiras: quantos anos ela rejuvenesceu?", "Full face na manutenção anual"], 2],
+    ["Depoimento no espelho", "res", "Logo depois do procedimento a paciente se olha no espelho e diz o que achou. São 20 segundos, com o segundo microfone nela.", "Uma pergunta só: \"E aí, o que você achou?\"", "É a prova que mais convence: outra pessoa falando, sem roteiro.", ["Primeira vez na harmonização", "Paciente que tinha medo de agulha", "Paciente que voltou depois de um ano", "Mãe e filha no mesmo dia"], 2],
+    ["Trend e POV de humor", "sou", "Áudio do momento com uma situação da rotina da clínica escrita na tela.", "POV: você termina o dia cansada, mas quem te manda mensagem é a cliente fiel", "Foi o que deu 241 mil e 155 mil visualizações para você em 2025.", ["A paciente que pede \"só um pouquinho\"", "A cara da paciente quando vê o resultado", "Explicando pela 10ª vez que não vai ficar artificial", "Sexta-feira na clínica"], 2],
+    ["Bastidor da formação", "sou", "Mostre o curso, o congresso ou a certificação que você fez, e o que aprendeu lá.", "O que eu aprendi no último curso que muda o seu resultado", "Autoridade que vem de fora da cadeira: a viagem de certificação da Duda Rocha gerou 48 comentários.", ["Os certificados na parede", "Um dia de curso", "O que mudou na sua técnica depois de um curso"], 2],
+    ["Sua história", "sou", "Você conta por que escolheu a harmonização facial, com fotos antigas.", "Por que eu escolhi a harmonização facial", "Vida pessoal gera mais comentários que post técnico, como mostram a gravidez da Andressa Gomes e o aniversário da Katyara Araújo.", ["Por que a harmonização", "A sua primeira paciente", "A sua família na clínica", "Um dia fora da clínica"], 2]
+  ];
+
+  /* Calendário: [data, P, estilo, tema] */
+  var CALENDARIO = [
+    ["2026-11-23", "faco", "Mito ou verdade", "Preenchimento labial derrete com o tempo?"],
+    ["2026-11-25", "sou", "Trend e POV de humor", "A semana da Black Friday na clínica, avisando que o Grupo VIP abre na sexta"],
+    ["2026-11-27", "res", "Antes e depois com a queixa", "Lábios: o que mudou nela? Fecha com \"a Black Friday abriu no Grupo VIP\""],
+    ["2026-11-30", "faco", "Use isto, não isto", "Escolher pelo preço x escolher pela avaliação, na semana do aviso dos valores novos"],
+    ["2026-12-02", "sou", "Sua história", "Por que você escolheu a harmonização facial"],
+    ["2026-12-04", "res", "Depoimento no espelho", "Paciente da Black Friday logo depois do procedimento"],
+    ["2026-12-07", "faco", "Saber dizer não", "3 casos em que você não faz preenchimento labial"],
+    ["2026-12-09", "sou", "Bastidor da formação", "Seus cursos e certificações, das respostas da ficha"],
+    ["2026-12-11", "res", "Antes e depois com a queixa", "Rinomodelação de perfil, com uma pergunta para os comentários"],
+    ["2026-12-14", "faco", "X ou Y?", "Toxina ou preenchimento: qual resolve a sua ruga?"],
+    ["2026-12-16", "sou", "Trend e POV de humor", "Fim de ano na clínica"],
+    ["2026-12-18", "res", "Depoimento no espelho", "Paciente que voltou um ano depois, lembrando que dá para agendar no valor atual até 31/12"]
   ];
 
   /* Reels da Sarah: [data, visualizações, rótulo] (rótulo vazio = pessoal sem rótulo; null = outro) */
@@ -677,6 +740,38 @@ citando o procedimento e o nome da paciente, sem exagero:
     card.appendChild(el("span", "good", esc(c[6])));
     conc.appendChild(card);
   });
+
+  var PNOME = { faco: ["Provo que faço", "p-faco"], res: ["Provo que resolvo", "p-res"], sou: ["Provo quem sou", "p-sou"] };
+  ESTILOS.forEach(function (e) {
+    var card = el("div", "card style-card");
+    card.appendChild(el("span", "pill " + PNOME[e[1]][1], PNOME[e[1]][0])).style.alignSelf = "flex-start";
+    card.appendChild(el("span", "name", esc(e[0])));
+    card.appendChild(el("span", "how", esc(e[2])));
+    card.appendChild(el("span", "lbl", "Gancho de exemplo"));
+    card.appendChild(el("span", "hook", esc(e[3])));
+    card.appendChild(el("span", "lbl", "Ideias"));
+    card.appendChild(el("ul", null, e[5].map(function (i) { return "<li>" + esc(i) + "</li>"; }).join("")));
+    card.appendChild(el("span", "why", esc(e[4])));
+    document.getElementById(e[6] === 1 ? "estilos" : "estilos2").appendChild(card);
+  });
+
+  var DIAS = ["dom", "seg", "ter", "qua", "qui", "sex", "sáb"];
+  var cal = document.getElementById("calendario");
+  for (var w = 0; w < CALENDARIO.length; w += 3) {
+    var semana = CALENDARIO.slice(w, w + 3);
+    cal.appendChild(el("div", "cal-week", "Semana de " + ddmm(semana[0][0])));
+    var cbox = el("div", "rows");
+    semana.forEach(function (c) {
+      var r = el("div", "act");
+      var wd = DIAS[new Date(Date.UTC(+c[0].slice(0, 4), +c[0].slice(5, 7) - 1, +c[0].slice(8, 10))).getUTCDay()];
+      r.appendChild(el("span", "when", ddmm(c[0]) + "<br><small style=\"font-weight:500;color:var(--muted)\">" + wd + "</small>"));
+      r.appendChild(el("span", "what", esc(c[3])));
+      r.appendChild(el("span", "pill " + PNOME[c[1]][1], PNOME[c[1]][0]));
+      r.appendChild(el("span", "meta", "Estilo: " + esc(c[2])));
+      cbox.appendChild(r);
+    });
+    cal.appendChild(cbox);
+  }
 
   /* Gráfico dos Reels: desenhado na largura real da tela, para o texto ficar legível no celular */
   var svg = document.getElementById("reels");
