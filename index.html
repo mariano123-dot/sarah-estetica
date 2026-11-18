@@ -164,6 +164,20 @@ svg.reels text { font-family: var(--font-body); }
 .p-res { background: var(--good-soft); color: var(--good); }
 .p-sou { background: var(--gold-soft); color: var(--gold); }
 .cal-week { font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); margin-top: 6px; }
+.offers { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+.offer { border: 1px solid var(--line); border-radius: 14px; background: var(--surface); padding: 14px 16px; display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.offer.hero { border-color: var(--wine); background: var(--wine-soft); }
+.offer .o-name { font-weight: 700; font-size: 16px; }
+.offer .o-old { color: var(--muted); text-decoration: line-through; font-size: 14px; margin-top: 4px; }
+.offer .o-price { font-family: var(--font-display); font-size: 36px; color: var(--wine); line-height: 1.05; font-variant-numeric: tabular-nums; }
+.offer .o-terms { font-size: 13px; color: var(--muted); }
+ul.plain, ol.plain { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 7px; font-size: 15px; }
+.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+.gitem { display: flex; flex-direction: column; gap: 6px; min-width: 0; font-size: 14px; }
+.gitem img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 10px; border: 1px solid var(--line); display: block; background: var(--bg); }
+.gitem .glinks { display: flex; gap: 10px; flex-wrap: wrap; font-size: 13px; }
+.script { border: 1px solid var(--line); border-radius: 12px; background: var(--surface); padding: 13px 15px; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.script ol { padding-left: 18px; margin: 0; font-size: 14px; display: flex; flex-direction: column; gap: 5px; }
 .links { display: flex; flex-wrap: wrap; gap: 8px; }
 .vlink { display: inline-flex; flex-direction: column; gap: 1px; padding: 9px 13px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); text-decoration: none; color: var(--ink); font-size: 14px; }
 .vlink b { color: var(--wine); font-size: 16px; font-variant-numeric: tabular-nums; }
@@ -207,10 +221,10 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
     <div class="strip" id="strip"></div>
     <div class="cta-row">
       <span class="countdown" id="countdown"></span>
-      <a class="btn" href="ficha.html" target="_blank" rel="noopener">Responder a ficha</a>
+      <a class="btn" href="#black">Ver a Black da Sarah</a>
     </div>
     <nav class="toc" aria-label="Seções">
-      <a href="#onde">Onde estamos</a><a href="#gargalos">Gargalos</a><a href="#resolver">Como resolver</a><a href="#passos">Próximos passos</a><a href="#conteudo">Conteúdo</a><a href="#inspiracoes">Inspirações</a><a href="#feito">Já feito</a><a href="#analise">Análise</a>
+      <a href="#onde">Onde estamos</a><a href="#black">Black Friday</a><a href="#gargalos">Gargalos</a><a href="#resolver">Como resolver</a><a href="#passos">Próximos passos</a><a href="#conteudo">Conteúdo</a><a href="#inspiracoes">Inspirações</a><a href="#feito">Já feito</a><a href="#analise">Análise</a>
     </nav>
   </header>
 
@@ -219,27 +233,156 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
     <div class="rows" id="onde-list"></div>
   </section>
 
+  <section id="black" aria-labelledby="h-bla">
+    <div class="sec-head"><span class="sec-num">2</span><div><h2 id="h-bla">Black Friday</h2><p class="sec-lead">A Black da Sarah abre em 20/11 e vai até 30/11, com 30 vagas para atender até 20/12. Toxina e preenchimento com preço de Black, sem entrar na guerra do preenchimento a R$ 219.</p></div></div>
+
+    <h3>A oferta</h3>
+    <div class="offers">
+      <div class="offer"><span class="o-name">Toxina botulínica (botox)</span><span class="o-old">de R$ 700</span><span class="o-price">R$ 590</span><span class="o-terms">no Pix ou 6x de R$ 98,33 sem juros</span></div>
+      <div class="offer"><span class="o-name">1 ml de preenchimento</span><span class="o-terms">lábios, nariz ou olheiras</span><span class="o-old">de R$ 800</span><span class="o-price">R$ 690</span><span class="o-terms">no Pix ou 6x de R$ 115 sem juros</span></div>
+      <div class="offer hero"><span class="tag">Carro-chefe</span><span class="o-name">Combo: toxina + 1 ml de preenchimento</span><span class="o-old">de R$ 1.500</span><span class="o-price">R$ 1.190</span><span class="o-terms">no Pix ou 6x de R$ 198,33 sem juros</span></div>
+    </div>
+    <ul class="plain">
+      <li><b>Prazo:</b> pagamento até 30/11 ou até acabarem as 30 vagas.</li>
+      <li><b>Atendimento:</b> de 20/11 a 20/12, nas vagas extras de dezembro.</li>
+      <li><b>Avaliação gratuita antes:</b> se o procedimento não for indicado para a paciente, ela não paga nada.</li>
+      <li><b>Reserva:</b> sinal de R$ 100 no Pix, abatido do valor, para segurar a vaga e evitar falta. <span class="legend">(sugestão: decidir com você)</span></li>
+      <li><b>Parcelamento:</b> 6x sem juros na Black. Hoje você parcela em até 12x com juros. <span class="legend">(decidir com você: se preferir manter 12x com juros, trocamos uma linha nos criativos)</span></li>
+    </ul>
+    <p class="note"><b>Por que esses preços.</b> Em Taguatinga já tem toxina e lábio por R$ 549,99 (Studio SB) e lábio por R$ 699,90 (Instituto Bella Face). Em Brasília, o combo toxina + 1 ml está por R$ 1.198 (Dra. Andréa Pamella, Lago Norte). Ficamos no meio: um pouco abaixo do combo de Brasília, sem descer para a faixa de R$ 219 a R$ 549. O que diferencia é você de rosto, enquanto quase todo mundo usa foto de modelo de banco de imagem.</p>
+
+    <h3>Os criativos</h3>
+    <p class="legend">Cada peça tem duas versões: feed (4:5) e stories/reels (9:16). Toque para abrir em tamanho cheio e salvar.</p>
+    <div class="gallery">
+      <div class="gitem"><a href="black/sarah-black-c1-feed.jpg" target="_blank" rel="noopener"><img src="black/sarah-black-c1-feed.jpg" alt="Criativo do combo: toxina + 1 ml de preenchimento por R$ 1.190" loading="lazy"></a><b>1 · Combo</b><span class="glinks"><a href="black/sarah-black-c1-feed.jpg" target="_blank" rel="noopener">Feed</a><a href="black/sarah-black-c1-story.jpg" target="_blank" rel="noopener">Stories</a></span></div>
+      <div class="gitem"><a href="black/sarah-black-c2-feed.jpg" target="_blank" rel="noopener"><img src="black/sarah-black-c2-feed.jpg" alt="Criativo da toxina botulínica por R$ 590" loading="lazy"></a><b>2 · Toxina</b><span class="glinks"><a href="black/sarah-black-c2-feed.jpg" target="_blank" rel="noopener">Feed</a><a href="black/sarah-black-c2-story.jpg" target="_blank" rel="noopener">Stories</a></span></div>
+      <div class="gitem"><a href="black/sarah-black-c3-feed.jpg" target="_blank" rel="noopener"><img src="black/sarah-black-c3-feed.jpg" alt="Criativo de 1 ml de preenchimento por R$ 690" loading="lazy"></a><b>3 · Preenchimento</b><span class="glinks"><a href="black/sarah-black-c3-feed.jpg" target="_blank" rel="noopener">Feed</a><a href="black/sarah-black-c3-story.jpg" target="_blank" rel="noopener">Stories</a></span></div>
+      <div class="gitem"><a href="black/sarah-black-c4-feed.jpg" target="_blank" rel="noopener"><img src="black/sarah-black-c4-feed.jpg" alt="Criativo Medo de ficar artificial, com a oferta do combo" loading="lazy"></a><b>4 · Medo de ficar artificial</b><span class="glinks"><a href="black/sarah-black-c4-feed.jpg" target="_blank" rel="noopener">Feed</a><a href="black/sarah-black-c4-story.jpg" target="_blank" rel="noopener">Stories</a></span></div>
+    </div>
+
+    <h3>O que o mercado está fazendo</h3>
+    <p class="legend">Biblioteca de Anúncios da Meta, anúncios ativos em 18/11/2026.</p>
+    <ul class="plain">
+      <li><b>É a "Black de novembro".</b> A maioria começou entre 20/10 e 5/11 e fica no ar até 30/11. A busca "black friday botox" tem cerca de 5.200 anúncios ativos no Brasil e "black friday preenchimento labial", cerca de 2.100.</li>
+      <li><b>Botão do WhatsApp em quase todos</b>, com avaliação gratuita.</li>
+      <li><b>A parcela vira manchete:</b> "botox de R$ 1.294 por R$ 594 em 12x de R$ 49,50 sem juros" (Perfeccionare) e "botox por 10x de R$ 69,90" (Faces Naturais).</li>
+      <li><b>Escassez em número:</b> "30 vagas", "primeiros 100 clientes" e o Instituto Harmonizar, que tem unidade em Taguatinga, com "só 23 vagas". Ele esconde o preço: "responda 2 perguntas e libere o preço".</li>
+      <li><b>Lábio de 1 ml no país:</b> de R$ 219,99 a R$ 799. Em Taguatinga: R$ 549,99 (Studio SB, desde 16/11) e R$ 699,90 (Instituto Bella Face).</li>
+      <li><b>Território do perfil:</b> a Dra. Catarina Assumpção, de Taguatinga, começou em 17/11 um anúncio de "1 ml de lábio + 1 ml de rinomodelação", em vídeo e com avaliação gratuita.</li>
+      <li><b>Quase tudo é arte pronta</b> com modelo de banco de imagem, fundo preto e dourado e preço grande. O rosto da profissional é raro.</li>
+      <li><b>Em Taguatinga quase ninguém anuncia:</b> só 6 anúncios ativos falam de botox e 7 de preenchimento labial. Tem espaço no feed da região.</li>
+    </ul>
+    <div class="links">
+      <a class="vlink" href="https://www.facebook.com/ads/library/?active_status=active&amp;ad_type=all&amp;country=BR&amp;q=black%20friday%20botox&amp;search_type=keyword_unordered" target="_blank" rel="noopener"><b>Black Friday botox</b><span>na Biblioteca ↗</span></a>
+      <a class="vlink" href="https://www.facebook.com/ads/library/?active_status=active&amp;ad_type=all&amp;country=BR&amp;q=black%20friday%20preenchimento%20labial&amp;search_type=keyword_unordered" target="_blank" rel="noopener"><b>Black preenchimento</b><span>na Biblioteca ↗</span></a>
+      <a class="vlink" href="https://www.facebook.com/ads/library/?active_status=active&amp;ad_type=all&amp;country=BR&amp;q=preenchimento%20labial%20taguatinga&amp;search_type=keyword_unordered" target="_blank" rel="noopener"><b>Taguatinga</b><span>concorrentes diretos ↗</span></a>
+      <a class="vlink" href="https://www.facebook.com/ads/library/?active_status=active&amp;ad_type=all&amp;country=BR&amp;q=Dra%20Andr%C3%A9a%20Pamella&amp;search_type=keyword_unordered" target="_blank" rel="noopener"><b>Combo R$ 1.198</b><span>Dra. Andréa Pamella ↗</span></a>
+      <a class="vlink" href="https://www.facebook.com/ads/library/?active_status=active&amp;ad_type=all&amp;country=BR&amp;q=catarina%20assumpcao&amp;search_type=keyword_unordered" target="_blank" rel="noopener"><b>Lábio + nariz</b><span>Dra. Catarina ↗</span></a>
+    </div>
+
+    <h3>Calendário da Black</h3>
+    <div class="rows" id="black-cal"></div>
+
+    <h3>A campanha no Meta</h3>
+    <div class="tbl-wrap"><table>
+      <tbody>
+        <tr><td>Objetivo</td><td>Engajamento, com conversas no WhatsApp (botão "Enviar mensagem")</td></tr>
+        <tr><td>Orçamento</td><td>R$ 50 por dia, de 20 a 30/11: R$ 550 no total</td></tr>
+        <tr><td>Região</td><td>Raio de 10 km do JK Shopping: Taguatinga, Ceilândia, Águas Claras, Vicente Pires e parte de Samambaia</td></tr>
+        <tr><td>Idade</td><td>25 a 55 anos, homens e mulheres (o Meta exige 18+ para procedimento estético)</td></tr>
+        <tr><td>Público</td><td>Aberto, sem interesses: a oferta e a região fazem o filtro</td></tr>
+        <tr><td>Posicionamentos</td><td>Automáticos; cada criativo sobe com a versão de feed e a de stories</td></tr>
+        <tr><td>Anúncios</td><td>Os 4 criativos desde o primeiro dia, e os vídeos a partir de 21/11</td></tr>
+        <tr><td>Régua</td><td>Custo por conversa de até R$ 10. Se passar de R$ 15 por 2 dias, pausamos o criativo mais caro</td></tr>
+      </tbody>
+    </table></div>
+    <p class="note">Você já impulsionou posts e não teve retorno. Impulsionar leva a pessoa para o perfil; esta campanha leva direto para a conversa no WhatsApp, com a oferta e o preço na mão.</p>
+
+    <h3>Textos dos anúncios</h3>
+    <pre class="prompt" id="tx1">🖤 Black da Sarah: toxina botulínica + 1 ml de preenchimento (lábios, nariz ou olheiras) de R$ 1.500 por R$ 1.190 no Pix ou 6x de R$ 198,33 sem juros.
+
+São só 30 vagas, com atendimento até 20/12 no JK Shopping, em Taguatinga.
+Antes de tudo tem avaliação gratuita: se o procedimento não for indicado para você, eu te falo.
+
+Toque em Enviar mensagem e garanta a sua vaga.
+Sarah Rodrigues · Farmacêutica esteta · CRF 590427</pre>
+    <button class="copy" type="button" data-copy="tx1">Copiar</button>
+    <pre class="prompt" id="tx2">Medo de ficar artificial? É a dúvida que eu mais escuto no consultório.
+
+Por isso, na minha avaliação o planejamento vem antes da agulha: a gente decide junto o que valoriza o seu rosto, sem exagero. Já são mais de 1.000 pacientes e nota 4,8 no Google.
+
+Na Black da Sarah, toxina + 1 ml de preenchimento sai de R$ 1.500 por R$ 1.190 no Pix. São 30 vagas, até 30/11.
+👉 Toque em Enviar mensagem.
+Sarah Rodrigues · Farmacêutica esteta · CRF 590427 · JK Shopping, Taguatinga</pre>
+    <button class="copy" type="button" data-copy="tx2">Copiar</button>
+    <pre class="prompt" id="tx3">Black da Sarah, só até 30/11 🖤
+
+💉 Toxina botulínica: de R$ 700 por R$ 590
+✨ 1 ml de preenchimento (lábios, nariz ou olheiras): de R$ 800 por R$ 690
+🖤 Combo toxina + 1 ml: de R$ 1.500 por R$ 1.190
+
+No Pix ou em 6x sem juros. Avaliação gratuita antes de qualquer aplicação.
+30 vagas, atendimento até 20/12 no JK Shopping, em Taguatinga.
+Toque em Enviar mensagem.
+Sarah Rodrigues · Farmacêutica esteta · CRF 590427</pre>
+    <button class="copy" type="button" data-copy="tx3">Copiar</button>
+    <p><b>Títulos:</b> "Black da Sarah · 30 vagas" · "Toxina + preenchimento por R$ 1.190" · "Avaliação gratuita em Taguatinga"</p>
+
+    <h3>Mensagens do WhatsApp</h3>
+    <p class="legend">Boas-vindas do anúncio (configurada no Gerenciador), com 3 botões de resposta rápida: "Quero o combo (R$ 1.190)", "Quero a toxina (R$ 590)" e "Quero o preenchimento (R$ 690)".</p>
+    <pre class="prompt" id="tx4">Oi! Que bom que você veio 🖤 Aqui é da equipe da Sarah Rodrigues. A Black vai até 30/11 e tem 30 vagas. Qual opção te interessa?</pre>
+    <button class="copy" type="button" data-copy="tx4">Copiar</button>
+    <p class="legend">Para as pacientes antigas e o Grupo VIP, em 19/11 às 19h, numa lista de transmissão (o grupo não conversa, então a mensagem vai uma a uma):</p>
+    <pre class="prompt" id="tx5">Oi, [nome]! Aqui é a Sarah 🖤
+Amanhã eu abro a minha Black para todo mundo, mas quem já é minha paciente vem primeiro.
+
+Toxina + 1 ml de preenchimento (lábios, nariz ou olheiras): de R$ 1.500 por R$ 1.190 no Pix ou 6x sem juros.
+Também tem toxina por R$ 590 e 1 ml de preenchimento por R$ 690.
+
+São só 30 vagas, com atendimento até 20/12. Quer que eu reserve a sua? Responde EU QUERO.</pre>
+    <button class="copy" type="button" data-copy="tx5">Copiar</button>
+
+    <h3>Roteiro da secretária</h3>
+    <ol class="plain">
+      <li>Responder em até 5 minutos no horário de atendimento e marcar a conversa com a etiqueta "Black Friday".</li>
+      <li>Perguntar o nome, qual opção interessa e se a pessoa já fez o procedimento antes.</li>
+      <li>Explicar: avaliação gratuita com a Sarah antes do procedimento, e a vaga fica garantida com o sinal de R$ 100 no Pix, abatido do valor.</li>
+      <li>Oferecer dois horários concretos ("terça às 14h ou quinta às 10h?"), nunca "quando você pode?".</li>
+      <li>Quem não respondeu recebe um lembrete em 24 h e outro em 27/11 com quantas vagas restam.</li>
+      <li>Toda venda vai para a planilha: nome, procedimento, data, valor e como conheceu (anúncio, Instagram, indicação).</li>
+    </ol>
+
+    <h3>Vídeos para gravar em 19/11</h3>
+    <p class="legend">Você tem 2 horas por semana e já tem quem edite. Celular em pé, na altura dos olhos, luz da janela de frente e 3 tentativas de cada frase. Se preferir, a gente edita.</p>
+    <div class="three">
+      <div class="script"><span class="tag">Vídeo 1 · 25 s · Provo quem sou</span><b>"Esse ano eu fiz Black Friday, do meu jeito"</b><ol><li>Gancho, com "BLACK DA SARAH" na tela: "Esse ano eu decidi fazer Black Friday. Mas do meu jeito."</li><li>"São só 30 vagas para dezembro: toxina botulínica mais 1 ml de preenchimento (lábios, nariz ou olheiras) de 1.500 por 1.190 no Pix."</li><li>"E antes de tudo tem avaliação gratuita. Se não for indicado para você, eu vou te falar."</li><li>"Toca em enviar mensagem e garante a sua."</li></ol></div>
+      <div class="script"><span class="tag">Vídeo 2 · 30 s · Provo que faço</span><b>"Medo de ficar artificial?"</b><ol><li>Gancho: "Se o seu medo é ficar com cara de harmonizada, assiste até o fim."</li><li>"É o que eu mais escuto aqui. A resposta é planejamento: eu olho o seu perfil inteiro, nariz, lábios e queixo, antes de pegar a agulha."</li><li>"Às vezes o que você precisa é menos produto, no lugar certo."</li><li>"Na minha Black, toxina mais 1 ml de preenchimento sai por 1.190. São 30 vagas. Toca em enviar mensagem."</li></ol></div>
+      <div class="script"><span class="tag">Vídeo 3 · 12 s · Trend</span><b>POV com áudio do momento</b><ol><li>Texto na tela: "POV: a paciente descobre que a Black da Sarah tem toxina + preenchimento por R$ 1.190".</li><li>Você reage no ritmo do áudio (surpresa, sorriso, aponta para o celular).</li><li>Texto final: "30 vagas · chama no WhatsApp".</li></ol></div>
+    </div>
+    <p class="note"><b>Regras que valem para tudo.</b> Pela Resolução 658/2018 do Conselho Federal de Farmácia, preço pode aparecer, desde que respeite o Código de Defesa do Consumidor (prazo, condições e parcelas claras). Não pode prometer resultado nem usar "a melhor". O nome e o CRF aparecem em toda peça. O Meta aceita anúncio de procedimento estético só para maiores de 18 anos, sem comparação lado a lado de rugas para a toxina e sem mensagem que faça a pessoa se sentir mal com a aparência.</p>
+  </section>
+
   <section id="gargalos" aria-labelledby="h-garg">
-    <div class="sec-head"><span class="sec-num">2</span><div><h2 id="h-garg">Gargalos</h2><p class="sec-lead">Do que mais pesa para o que menos pesa. Os três primeiros travam a chegada de pacientes novas; os dois últimos, o lucro de cada paciente.</p></div></div>
+    <div class="sec-head"><span class="sec-num">3</span><div><h2 id="h-garg">Gargalos</h2><p class="sec-lead">Do que mais pesa para o que menos pesa. Os três primeiros travam a chegada de pacientes novas; os dois últimos, o lucro de cada paciente.</p></div></div>
     <ol class="gargalos" id="garg-list"></ol>
   </section>
 
   <section id="resolver" aria-labelledby="h-res">
-    <div class="sec-head"><span class="sec-num">3</span><div><h2 id="h-res">Como vamos resolver</h2><p class="sec-lead">Cada ação com prazo, o gargalo que ela resolve, quem faz e o status.</p></div></div>
+    <div class="sec-head"><span class="sec-num">4</span><div><h2 id="h-res">Como vamos resolver</h2><p class="sec-lead">Cada ação com prazo, o gargalo que ela resolve, quem faz e o status.</p></div></div>
     <p class="legend">Você = Sarah · Nós = equipe da consultoria · Juntos = as duas partes</p>
     <div id="acoes"></div>
   </section>
 
   <section id="passos" aria-labelledby="h-pas">
-    <div class="sec-head"><span class="sec-num">4</span><div><h2 id="h-pas">Próximos passos</h2><p class="sec-lead">Até 20/11 a gente arruma a casa. Em 27/11 abre a Black Friday no Grupo VIP. Dezembro é para agendar no valor atual, e a tabela nova entra em 4/1.</p></div></div>
-    <h3>Esta semana (até 20/11)</h3>
+    <div class="sec-head"><span class="sec-num">5</span><div><h2 id="h-pas">Próximos passos</h2><p class="sec-lead">A Black abre em 19/11 para as pacientes antigas e em 20/11 para todo mundo, e fecha em 30/11. Dezembro é para atender as 30 vagas, e a tabela nova entra em 4/1.</p></div></div>
+    <h3>Esta semana (até 21/11)</h3>
     <ul class="check" id="semana"></ul>
     <h3>Até janeiro</h3>
     <ul class="timeline" id="timeline"></ul>
   </section>
 
   <section id="conteudo" aria-labelledby="h-con">
-    <div class="sec-head"><span class="sec-num">5</span><div><h2 id="h-con">Conteúdo: estilos e ideias</h2><p class="sec-lead">Vídeos que ensinam e mostram que você é referência, sem perder o seu jeito. São 3 Reels por semana, um de cada P: segunda "Provo que faço", quarta "Provo quem sou", sexta "Provo que resolvo".</p></div></div>
+    <div class="sec-head"><span class="sec-num">6</span><div><h2 id="h-con">Conteúdo: estilos e ideias</h2><p class="sec-lead">Vídeos que ensinam e mostram que você é referência, sem perder o seu jeito. São 3 Reels por semana, um de cada P: segunda "Provo que faço", quarta "Provo quem sou", sexta "Provo que resolvo".</p></div></div>
     <div class="note">
       <b>O que os números mostram.</b> Vídeo educativo puro, como o "mito ou verdade", costuma ficar entre 70 e 700 curtidas nos perfis de estética que analisamos. Ele educa e passa confiança, mas raramente estoura sozinho. O que estoura tem gancho forte: humor e trend (a Gabi Laudeauser teve 319 mil e 641 mil visualizações), opinião contra a corrente (um post assim teve 642 comentários) e pergunta ao público (a Duda Rocha teve 105 comentários com "quantos anos ela rejuvenesceu?"). Por isso o educativo entra sempre com gancho, e o pessoal continua no mix.
     </div>
@@ -261,7 +404,7 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
   </section>
 
   <section id="inspiracoes" aria-labelledby="h-ins">
-    <div class="sec-head"><span class="sec-num">6</span><div><h2 id="h-ins">Inspirações</h2><p class="sec-lead">Vídeos e perfis para assistir juntos antes de gravar. Cada link abre no Instagram, numa aba nova.</p></div></div>
+    <div class="sec-head"><span class="sec-num">7</span><div><h2 id="h-ins">Inspirações</h2><p class="sec-lead">Vídeos e perfis para assistir juntos antes de gravar. Cada link abre no Instagram, numa aba nova.</p></div></div>
     <h3>Comece pelos seus</h3>
     <p class="legend">Os seus vídeos que mais deram alcance: o caminho já existe no seu perfil.</p>
     <div class="links" id="insp-sarah"></div>
@@ -272,14 +415,44 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
   </section>
 
   <section id="feito" aria-labelledby="h-fei">
-    <div class="sec-head"><span class="sec-num">7</span><div><h2 id="h-fei">O que já foi feito</h2><p class="sec-lead">O mais recente primeiro.</p></div></div>
+    <div class="sec-head"><span class="sec-num">8</span><div><h2 id="h-fei">O que já foi feito</h2><p class="sec-lead">O mais recente primeiro.</p></div></div>
     <div class="rows" id="feito-list"></div>
   </section>
 
   <section id="analise" aria-labelledby="h-ana">
-    <div class="sec-head"><span class="sec-num">8</span><div><h2 id="h-ana">Análise de apoio</h2><p class="sec-lead">Levantada em 13/11/2026 no seu Instagram, no Google, nos perfis da concorrência e na Biblioteca de Anúncios da Meta. Toque para abrir.</p></div></div>
+    <div class="sec-head"><span class="sec-num">9</span><div><h2 id="h-ana">Análise de apoio</h2><p class="sec-lead">Levantada em 13/11/2026 no seu Instagram, no Google, nos perfis da concorrência e na Biblioteca de Anúncios da Meta. Toque para abrir.</p></div></div>
 
     <div>
+    <details>
+      <summary><span>O que você nos contou<small>Respostas da ficha, 18/11/2026</small></span></summary>
+      <div class="det-body">
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Procedimento</th><th>Preço hoje</th><th>Procura</th></tr></thead>
+          <tbody>
+            <tr><td>Toxina botulínica</td><td class="num">R$ 700</td><td>Alta</td></tr>
+            <tr><td>Preenchimento labial</td><td class="num">R$ 800</td><td>Alta</td></tr>
+            <tr><td>Rinomodelação</td><td class="num">R$ 800</td><td>Alta</td></tr>
+            <tr><td>Olheiras</td><td class="num">R$ 800</td><td>Média</td></tr>
+            <tr><td>Bioestimulador de colágeno</td><td class="num">R$ 1.500</td><td>Média</td></tr>
+            <tr><td>Glúteos</td><td class="num">R$ 4.400</td><td>Média</td></tr>
+            <tr><td>Bronze</td><td class="num">R$ 100</td><td>Baixa</td></tr>
+          </tbody>
+        </table></div>
+        <ul>
+          <li><b>O que mais vende e o que você mais gosta:</b> preenchimento labial e rinomodelação.</li>
+          <li><b>Pagamento:</b> Pix, dinheiro e cartão em até 12x com juros. Avaliação gratuita.</li>
+          <li><b>Atendimento:</b> você tem secretária, usa WhatsApp Business com etiquetas e planilha, e entra em contato com todas as pacientes que já passaram pela clínica.</li>
+          <li><b>Como quer ser lembrada:</b> pelo perfil (nariz, lábios e queixo).</li>
+          <li><b>Formação:</b> farmácia, pós-graduação em estética avançada, congresso Vida Estética, congresso de peptídeos e duas mentorias VIP.</li>
+          <li><b>Objetivo para 2027:</b> mudar para uma clínica nova e ampliar o número de pacientes.</li>
+          <li><b>Conteúdo:</b> já tem quem grave e edite (por troca de serviços), 2 horas por semana para gravar, falta tempo; topa trend e humor, família e amigas toparam aparecer, e todas as pacientes assinam autorização de imagem.</li>
+          <li><b>Black Friday:</b> 30 vagas extras em dezembro; o Grupo VIP tem 125 pessoas, mas ninguém conversa.</li>
+          <li><b>Google e anúncios:</b> você tem acesso ao perfil do Google; já impulsionou posts e não teve retorno.</li>
+        </ul>
+        <p class="legend">Custos e margens ficam fora desta página, que é aberta. Estão no relatório interno da equipe.</p>
+      </div>
+    </details>
+
     <details open>
       <summary><span>Seu Instagram<small>O jeito pessoal é o que dá alcance</small></span></summary>
       <div class="det-body">
@@ -315,7 +488,7 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
         <h3>O que muda</h3>
         <ul>
           <li><b>Nome do perfil:</b> Sarah Rodrigues | Harmonização Facial Taguatinga (o nome entra na busca do Instagram).</li>
-          <li><b>Bio:</b> Harmonização natural: mais bonita, ainda você / +1.000 pacientes · CRF 590427 / JK Shopping, Taguatinga · sala 211 / Agende sua avaliação 👇</li>
+          <li><b>Bio:</b> Farmacêutica esteta com foco em perfil: nariz, lábios e queixo / +1.000 pacientes · CRF 590427 / JK Shopping, Taguatinga · sala 211 / Agende sua avaliação 👇 <span class="legend">(atualizada em 18/11 com o ângulo que você escolheu; "especialista" fica de fora porque o CFF só aceita especialidade reconhecida)</span></li>
           <li><b>Destaques, nesta ordem:</b> Comece aqui · Resultados · Depoimentos · Como funciona a avaliação · Como chegar no JK · Grupo VIP. Glúteos e Bronze viram um destaque só, "Corpo".</li>
           <li><b>Um nome só para a marca</b> no Instagram, no Google e na placa. Hoje aparecem "Dra. Sarah Rodrigues", "Sarah Rodrigues Estética" e "Sarah Rodrigues Estética Avançada".</li>
         </ul>
@@ -382,14 +555,16 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
     </details>
 
     <details>
-      <summary><span>Seu público<small>O que dá para ver de fora e o que falta saber</small></span></summary>
+      <summary><span>Seu público<small>Pelas suas respostas na ficha, em 18/11</small></span></summary>
       <div class="det-body">
         <ul>
+          <li><b>Quem compra:</b> mulheres de 28 a 45 anos que querem melhorar a aparência, e homens de 24 a 40 anos que querem harmonizar o rosto.</li>
+          <li><b>De onde chegam:</b> Instagram 60%, indicação 20%, Google 15% e anúncio pago 5%.</li>
+          <li><b>Maiores medos:</b> ficar artificial e sentir dor no procedimento.</li>
+          <li><b>Por que escolhem você:</b> a atenção no atendimento, o cuidado e os resultados.</li>
           <li><b>Região:</b> o JK fica em Taguatinga Norte, na divisa com Ceilândia; Samambaia também está perto.</li>
-          <li><b>Quem aparece nos posts:</b> mulheres em quase todos, alguns homens e a sua mãe.</li>
-          <li><b>Procedimentos mostrados:</b> lábios, rinomodelação, full face, olheiras, toxina, glúteos e bronze.</li>
+          <li><b>Voltam para manutenção:</b> 6 de cada 10 pacientes.</li>
         </ul>
-        <p>O resto vem das suas respostas na ficha e, daqui para frente, do CRM: idade e profissão das pacientes, de onde elas chegam, o procedimento que mais vende e quantas voltam.</p>
       </div>
     </details>
 
@@ -416,22 +591,7 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
       </div>
     </details>
 
-    <details>
-      <summary><span>Black Friday<small>O último preço de 2026, só no Grupo VIP</small></span></summary>
-      <div class="det-body">
-        <p>Recomendação: vender o valor atual pela última vez antes do reajuste de janeiro, só para quem está no Grupo VIP, com vagas limitadas e presente no lugar de desconto grande. A urgência é verdadeira e não ensina a paciente a esperar promoção.</p>
-        <ol>
-          <li><b>14 a 20/11, aquecer:</b> stories e um Reel avisando que a Black Friday é só no Grupo VIP.</li>
-          <li><b>21 a 26/11, grupo:</b> dúvidas, antes e depois e quantas vagas vão existir.</li>
-          <li><b>27/11, 9h, abre:</b> condições, número de vagas e parcelamento. A concorrência parcela em 6x a 12x.</li>
-          <li><b>27 a 30/11, vende:</b> cada interessada entra no CRM com a etiqueta "Black Friday".</li>
-          <li><b>1/12, fecha e avisa:</b> valores novos a partir de janeiro; até 31/12 ainda dá para agendar no valor atual.</li>
-        </ol>
-        <p class="note">Antes de colocar preço em anúncio, confira as regras de publicidade do CRF.</p>
-      </div>
-    </details>
-
-    <details>
+        <details>
       <summary><span>Equipamentos<small>De R$ 716 a R$ 1.457 para gravar sozinha</small></span></summary>
       <div class="det-body">
         <div class="tbl-wrap"><table>
@@ -480,7 +640,7 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
           <li><b>Prova na mesa:</b> álbum de antes e depois e as avaliações do Google na recepção.</li>
         </ul>
         <ol>
-          <li><b>Até 20/11:</b> você preenche a tabela atual e o custo de cada procedimento na ficha.</li>
+          <li><b>18/11, feito:</b> você mandou a tabela atual e o custo de cada procedimento na ficha.</li>
           <li><b>Até 30/11:</b> definimos a tabela nova. Sobe primeiro o que tem mais procura.</li>
           <li><b>1/12:</b> aviso no Grupo VIP e nos stories.</li>
           <li><b>4/1:</b> tabela nova em vigor, com parcelamento.</li>
@@ -536,73 +696,92 @@ citando o procedimento e o nome da paciente, sem exagero:
 <script>
 (function () {
   /* ===== Dados do plano: atualizar aqui a cada avanço ===== */
-  var ATUALIZADO = "2026-11-13";
-  var BLACK_FRIDAY = "2026-11-27";
+  var ATUALIZADO = "2026-11-18";
+  var BLACK_INI = "2026-11-20", BLACK_FIM = "2026-11-30";
 
   var ONDE = [
-    ["Instagram", "2.522 seguidores, 3 semanas sem postar, Reels recentes com mediana de 1,5 mil visualizações", "bad"],
-    ["Posicionamento", "A mesma frase de todo mundo (\"sem mudar quem você é\") e nenhum nome próprio para o seu trabalho", "bad"],
-    ["Black Friday", "Oferta ainda não definida", "bad"],
-    ["CRM e retorno de pacientes", "Não existe: ninguém é lembrado da manutenção nem convidado a avaliar no Google", "bad"],
-    ["Google", "Nota 4,8 com 24 avaliações, mas fora do mapa na busca \"harmonização facial Taguatinga\"", "warn"],
-    ["Concorrência no JK Shopping", "4 profissionais de harmonização no mesmo complexo: você, Anna Sarah, SV Clinic e André Allisson", "warn"],
-    ["Números do negócio", "Preço, custo, origem das pacientes e vagas ainda não levantados", "warn"],
-    ["Comunidade", "O Grupo VIP no WhatsApp existe, mas sem rotina", "warn"],
-    ["Produção de conteúdo", "Sem microfone, luz e tripé próprios", "warn"],
-    ["Prova de resultado", "Resultados bem fotografados, mais de 1.000 pacientes, 4,8 no Google", "good"]
+    ["Black Friday", "Oferta e 4 criativos prontos: toxina R$ 590, preenchimento R$ 690 e combo R$ 1.190, com 30 vagas. Falta aprovar e subir os anúncios", "warn"],
+    ["Anúncios", "Você já impulsionou posts sem retorno, e o anúncio pago traz só 5% das pacientes", "bad"],
+    ["Instagram", "60% das pacientes chegam por ele, mas são 2.522 seguidores e Reels recentes com mediana de 1,5 mil visualizações", "bad"],
+    ["Posicionamento", "Ângulo escolhido: perfil (nariz, lábios e queixo). Falta dar nome ao método, e \"Perfil Perfeito\" já é da Duda Rocha", "warn"],
+    ["CRM e retorno de pacientes", "WhatsApp Business com etiquetas e planilha já existem, e 6 de 10 voltam. Falta a rotina de mensagens", "warn"],
+    ["Google", "Nota 4,8 com 24 avaliações e você tem acesso ao perfil, mas não aparece no mapa na busca \"harmonização facial Taguatinga\"", "warn"],
+    ["Concorrência", "4 profissionais no mesmo complexo do JK, e em Taguatinga já tem Black de toxina e lábio a R$ 549,99", "warn"],
+    ["Comunidade", "Grupo VIP com 125 pessoas, mas ninguém conversa", "warn"],
+    ["Produção de conteúdo", "Já tem quem grave e edite e 2 horas por semana, mas falta tempo", "warn"],
+    ["Números do negócio", "Ficha respondida: preços, procura, público, origem das pacientes e vagas levantados", "good"],
+    ["Prova de resultado", "Mais de 1.000 pacientes, 4,8 no Google, pós em estética avançada e congressos", "good"]
   ];
 
   var GARGALOS = [
-    ["Você aparece pouco.", "Foram 6 meses sem postar em 2026, são 3 semanas sem post agora, e você não está no mapa do Google na busca principal. Quem não aparece não é lembrada."],
+    ["Você aparece pouco.", "Foram 6 meses sem postar em 2026 e você não está no mapa do Google na busca principal. Mesmo assim, 60% das pacientes chegam pelo Instagram: aparecer mais é o que mais traz paciente nova."],
     ["Você parece igual às outras.", "A mesma frase de pelo menos 6 concorrentes e nenhum nome para o seu trabalho. Os maiores da região têm: Brazilian Face™ (Maurício Alves), Perfil Perfeito e Protocolo New Skin (Duda Rocha), Full Face com naturalidade (André Allisson)."],
     ["O alcance não vira paciente.", "Um Reel seu teve 241 mil visualizações e o perfil continua com 2,5 mil seguidores: a bio é genérica e o vídeo não terminava com um pedido de ação."],
-    ["A paciente vai embora e não volta.", "Não há CRM, lembrete de manutenção, pedido de avaliação no Google nem pedido de indicação."],
-    ["Faltam os números.", "Sem preço, custo e origem das pacientes não dá para fechar a Black Friday nem subir o preço com segurança."]
+    ["O retorno depende da memória da paciente.", "6 de cada 10 voltam para manutenção mesmo sem lembrete, sem pedido de avaliação no Google e sem pedido de indicação. Com rotina no WhatsApp, esse número sobe."],
+    ["O anúncio pago não traz paciente.", "Você já impulsionou posts sem retorno, e o anúncio responde por só 5% das pacientes. Impulsionar post não é campanha: faltava oferta clara e botão direto para o WhatsApp."]
   ];
 
-  /* status: nao | andamento | feito */
+  /* status: nao | andamento | feito · o 3º campo é o número do gargalo ou um texto */
   var ACOES = [
     ["2026-11-13", "Aula de IA com os 3 pedidos prontos", 1, "Nós", "nao"],
-    ["2026-11-20", "Responder a Ficha da Sarah", 5, "Você", "nao"],
+    ["2026-11-18", "Responder a Ficha da Sarah", "Base do plano", "Você", "feito"],
+    ["2026-11-18", "Aprovar a oferta e os preços da Black", "Black Friday", "Juntos", "andamento"],
+    ["2026-11-19", "Gravar os 3 vídeos da Black (2 horas)", 1, "Você", "nao"],
+    ["2026-11-19", "Mandar a Black para as pacientes antigas e o Grupo VIP às 19h", 4, "Você", "nao"],
+    ["2026-11-20", "Subir a campanha de WhatsApp no Meta com os 4 criativos", 5, "Nós", "nao"],
+    ["2026-11-20", "Combinar com a secretária o roteiro e a etiqueta \"Black Friday\"", 4, "Você", "nao"],
     ["2026-11-20", "Nova bio, nome do perfil e destaques na ordem de venda", 3, "Você, com o nosso texto", "nao"],
     ["2026-11-20", "Google: trocar a categoria, cadastrar os serviços e pedir avaliação às pacientes recentes", 1, "Juntos", "nao"],
-    ["2026-11-20", "Etiquetas no WhatsApp Business e planilha de pacientes", 4, "Nós", "nao"],
     ["2026-11-20", "Comprar microfone, softbox e tripé", 1, "Você", "nao"],
-    ["2026-11-21", "Fechar a oferta da Black Friday", 5, "Nós", "nao"],
-    ["2026-11-21", "Rotina do Grupo VIP: dica semanal e vagas em primeira mão", 4, "Você", "nao"],
+    ["2026-11-21", "Pôr os vídeos da Black nos anúncios", 5, "Nós", "nao"],
     ["2026-11-23", "Começar os 3 Reels por semana, seguindo o calendário de Conteúdo", 1, "Você", "nao"],
     ["2026-11-23", "Pedido de ação no fim de todo vídeo", 3, "Você", "nao"],
-    ["2026-11-25", "Escolher o seu ângulo e dar nome ao seu jeito de trabalhar", 2, "Juntos", "nao"],
+    ["2026-11-25", "Dar nome ao seu método de perfil", 2, "Juntos", "andamento"],
     ["2026-11-27", "Mensagens automáticas: dia seguinte, 7 dias, manutenção e aniversário", 4, "Você", "nao"],
-    ["2026-11-30", "Definir a tabela de valores de janeiro", 5, "Juntos", "nao"]
+    ["2026-11-30", "Fechar a Black e definir a tabela de valores de janeiro", "Black Friday", "Juntos", "nao"]
   ];
 
   var SEMANA = [
-    ["Aula de IA com os 3 pedidos prontos", "nós", false],
-    ["Compartilhar a ficha e combinar a resposta até 20/11", "nós", false],
+    ["Responder a Ficha da Sarah", "você", true],
+    ["Aprovar a oferta e os preços da Black", "juntos", false],
+    ["Gravar os 3 vídeos da Black, que estão na seção Black Friday (19/11)", "você", false],
+    ["Mandar a Black para as pacientes antigas e o Grupo VIP, numa lista de transmissão, às 19h de 19/11", "você", false],
+    ["Conectar o WhatsApp à página do Facebook e subir a campanha (20/11)", "nós", false],
+    ["Combinar com a secretária o roteiro de atendimento e a etiqueta \"Black Friday\"", "você", false],
     ["Trocar nome e bio do Instagram e reorganizar os destaques", "você, com o nosso texto", false],
     ["Google: trocar a categoria, cadastrar os serviços e pedir avaliação às pacientes das últimas 2 semanas", "juntos", false],
-    ["Pedir à administração do JK para atualizar o telefone da sala 211 no site", "você", false],
-    ["Criar as etiquetas no WhatsApp Business e a planilha de pacientes", "nós", false],
-    ["Comprar microfone, softbox e tripé", "você", false],
-    ["Avisar nos stories que a Black Friday será só no Grupo VIP", "você", false],
-    ["Gravar os 3 Reels da semana de 23/11, que estão no calendário de Conteúdo", "você", false]
+    ["Comprar microfone, softbox e tripé", "você", false]
   ];
 
   /* [início, fim, texto, detalhe, destaque] */
   var LINHA = [
     ["2026-11-13", "2026-11-13", "Aula de IA", "", false],
-    ["2026-11-13", "2026-11-20", "Arrumar a casa", "Ficha respondida, bio e destaques, Google, CRM e equipamentos", false],
-    ["2026-11-14", "2026-11-26", "Aquecimento da Black Friday", "Stories, um Reel e conteúdo no Grupo VIP", false],
+    ["2026-11-18", "2026-11-18", "Ficha respondida e oferta montada", "Pesquisa da Black, oferta e 4 criativos", false],
+    ["2026-11-19", "2026-11-19", "Black para as pacientes antigas e o Grupo VIP", "24 horas de prioridade, a partir das 19h", false],
+    ["2026-11-20", "2026-11-30", "Black da Sarah no ar", "Anúncios para o WhatsApp, Reels e stories com o contador de vagas", true],
     ["2026-11-23", "2027-01-31", "3 Reels por semana", "Segunda, quarta e sexta, um de cada P", false],
-    ["2026-11-27", "2026-11-30", "Black Friday no Grupo VIP", "O último preço de 2026, com vagas limitadas", true],
-    ["2026-11-30", "2026-11-30", "Tabela nova definida", "", false],
-    ["2026-12-01", "2026-12-31", "Agenda no valor atual", "Aviso dos valores novos e última chance no valor de hoje", false],
+    ["2026-11-27", "2026-11-27", "Dia da Black Friday", "Reforço: últimas vagas", false],
+    ["2026-11-30", "2026-11-30", "Fecha a Black e define a tabela nova", "", false],
+    ["2026-12-01", "2026-12-20", "Atendimentos da Black", "As 30 vagas extras de dezembro e o aviso dos valores novos", false],
     ["2027-01-04", "2027-01-04", "Valores novos em vigor", "", true],
     ["2027-01-31", "2027-01-31", "Revisão das metas", "Seguidores, Reels, avaliações e conversas", false]
   ];
 
+  /* Calendário da Black: [data, texto, detalhe] */
+  var BLACK_CAL = [
+    ["2026-11-18", "Aprovar a oferta e os preços", "Conferir no Gerenciador a página do Facebook, o Instagram e o WhatsApp"],
+    ["2026-11-19", "Gravar os 3 vídeos e abrir para as pacientes antigas", "Às 19h, mensagem para as pacientes antigas e o Grupo VIP, com 24 horas de prioridade"],
+    ["2026-11-20", "Anúncios no ar, às 9h", "Os 4 criativos, para o WhatsApp"],
+    ["2026-11-21", "Entram os vídeos", "Os 3 vídeos editados viram anúncios"],
+    ["2026-11-23", "Reels e stories todos os dias até 26/11", "Calendário de Conteúdo e stories com o contador de vagas"],
+    ["2026-11-27", "Dia da Black Friday", "Post e stories com \"restam X vagas\"; mais orçamento se o custo por conversa estiver bom"],
+    ["2026-11-30", "Fecha às 23h59", "Quem não comprou recebe o aviso dos valores de janeiro em 1/12"]
+  ];
+
   var FEITO = [
+    ["2026-11-18", "Oferta da Black e 4 criativos com o seu rosto", "Toxina R$ 590, preenchimento R$ 690 e combo R$ 1.190, com 30 vagas; textos, mensagens e roteiros prontos"],
+    ["2026-11-18", "Pesquisa da Black na Biblioteca de Anúncios", "O que o mercado faz no país, em Brasília e em Taguatinga"],
+    ["2026-11-18", "Ficha respondida pela Sarah", "Preços, procura, público, ângulo e vagas"],
     ["2026-11-13", "Seção Inspirações com links diretos", "Seus 6 melhores vídeos, um exemplo para cada estilo e 8 perfis para acompanhar"],
     ["2026-11-13", "14 estilos de conteúdo e calendário das 4 primeiras semanas", "Seção Conteúdo, com base em 68 Reels de concorrentes e numa busca por \"mito ou verdade\""],
     ["2026-11-13", "Plano de ação publicado como página aberta", "Este link"],
@@ -649,9 +828,9 @@ citando o procedimento e o nome da paciente, sem exagero:
   /* Calendário: [data, P, estilo, tema] */
   var CALENDARIO = [
     ["2026-11-23", "faco", "Mito ou verdade", "Preenchimento labial derrete com o tempo?"],
-    ["2026-11-25", "sou", "Trend e POV de humor", "A semana da Black Friday na clínica, avisando que o Grupo VIP abre na sexta"],
-    ["2026-11-27", "res", "Antes e depois com a queixa", "Lábios: o que mudou nela? Fecha com \"a Black Friday abriu no Grupo VIP\""],
-    ["2026-11-30", "faco", "Use isto, não isto", "Escolher pelo preço x escolher pela avaliação, na semana do aviso dos valores novos"],
+    ["2026-11-25", "sou", "Trend e POV de humor", "A semana da Black na clínica, com o contador de vagas"],
+    ["2026-11-27", "res", "Antes e depois com a queixa", "Lábios: o que mudou nela? Fecha com \"a Black vai até segunda, 30/11\""],
+    ["2026-11-30", "faco", "Use isto, não isto", "Escolher pelo preço x escolher pela avaliação, no último dia da Black"],
     ["2026-12-02", "sou", "Sua história", "Por que você escolheu a harmonização facial"],
     ["2026-12-04", "res", "Depoimento no espelho", "Paciente da Black Friday logo depois do procedimento"],
     ["2026-12-07", "faco", "Saber dizer não", "3 casos em que você não faz preenchimento labial"],
@@ -723,11 +902,12 @@ citando o procedimento e o nome da paciente, sem exagero:
   strip.appendChild(el("span", "count c-warn", counts.warn + " em atenção"));
   strip.appendChild(el("span", "count c-good", counts.good + (counts.good === 1 ? " forte" : " fortes")));
 
-  var bfDays = dayNum(BLACK_FRIDAY) - today;
   var cd = document.getElementById("countdown");
-  if (bfDays > 1) cd.innerHTML = "Faltam <b>" + bfDays + "</b> dias para a Black Friday (" + ddmm(BLACK_FRIDAY) + ")";
-  else if (bfDays === 1) cd.innerHTML = "A Black Friday é <b>amanhã</b>";
-  else if (bfDays >= -3) cd.innerHTML = "<b>Black Friday</b> no ar até 30/11";
+  var dIni = dayNum(BLACK_INI) - today, dFim = dayNum(BLACK_FIM) - today;
+  if (dIni > 1) cd.innerHTML = "A Black da Sarah abre em <b>" + dIni + "</b> dias (" + ddmm(BLACK_INI) + ")";
+  else if (dIni === 1) cd.innerHTML = "A Black da Sarah abre <b>amanhã</b>";
+  else if (dFim > 0) cd.innerHTML = "Black no ar: faltam <b>" + dFim + "</b> dias (até " + ddmm(BLACK_FIM) + ")";
+  else if (dFim === 0) cd.innerHTML = "<b>Último dia</b> da Black da Sarah";
   else cd.textContent = "";
 
   var ondeList = document.getElementById("onde-list");
@@ -759,7 +939,8 @@ citando o procedimento e o nome da paciente, sem exagero:
         : esc(a[1]);
       r.appendChild(el("span", "what", what));
       r.appendChild(el("span", "pill " + STATUS[a[4]][1], STATUS[a[4]][0]));
-      r.appendChild(el("span", "meta", "Resolve: " + esc(GARGALOS[a[2] - 1][0].replace(/\.$/, "")) + " · " + esc(a[3])));
+      var lbl = typeof a[2] === "string" ? a[2] : GARGALOS[a[2] - 1][0].replace(/\.$/, "");
+      r.appendChild(el("span", "meta", "Resolve: " + esc(lbl) + " · " + esc(a[3])));
       box.appendChild(r);
     });
     acoesBox.appendChild(box);
@@ -782,6 +963,19 @@ citando o procedimento e o nome da paciente, sem exagero:
     li.appendChild(el("span", "dot"));
     li.appendChild(el("span", "ttext", esc(t[2]) + (isNow ? " · agora" : "") + (t[3] ? "<small>" + esc(t[3]) + "</small>" : "")));
     tl.appendChild(li);
+  });
+
+  var bcal = document.getElementById("black-cal");
+  var DSEM = ["dom", "seg", "ter", "qua", "qui", "sex", "sáb"];
+  BLACK_CAL.forEach(function (c) {
+    var r = el("div", "act");
+    var wd = DSEM[new Date(Date.UTC(+c[0].slice(0, 4), +c[0].slice(5, 7) - 1, +c[0].slice(8, 10))).getUTCDay()];
+    r.appendChild(el("span", "when", ddmm(c[0]) + "<br><small style=\"font-weight:500;color:var(--muted)\">" + wd + "</small>"));
+    r.appendChild(el("span", "what", esc(c[1])));
+    var past = dayNum(c[0]) < today, isToday = dayNum(c[0]) === today;
+    r.appendChild(el("span", "pill " + (past ? "p-good" : isToday ? "p-doing" : "p-idle"), past ? "Passou" : isToday ? "Hoje" : "A fazer"));
+    r.appendChild(el("span", "meta", esc(c[2])));
+    bcal.appendChild(r);
   });
 
   var fl = document.getElementById("feito-list");
